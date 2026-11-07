@@ -1,8 +1,9 @@
 {
   "version": 2,
+  "framework": null,
+  "outputDirectory": "public",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
     { "source": "/health", "destination": "/data/health.json" },
     { "source": "/api/cases", "destination": "/data/cases.json" },
     { "source": "/api/studio/:caseId", "destination": "/data/studio-:caseId-A.json" }
