@@ -1,0 +1,124 @@
+{
+  "serverUrl": "https://mcp.magicpatterns.com/mcp",
+  "seedAndPrototypeFlow": [
+    {
+      "step": 1,
+      "tool": "create_design",
+      "arguments": {},
+      "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl."
+    },
+    {
+      "step": 2,
+      "tool": "get_design_status",
+      "arguments": {
+        "editorId": "<editorId-from-step-1>"
+      },
+      "purpose": "Verify active artifactId and confirm isGenerating is false."
+    },
+    {
+      "step": 3,
+      "tool": "write_artifact_files",
+      "arguments": {
+        "artifactId": "<artifactId-from-step-2>",
+        "files": [
+          "App.tsx",
+          "index.tsx",
+          "index.css",
+          "tailwind.config.js",
+          "EnterpriseUxAuditGovernanceHub.tsx",
+          "mockData.ts",
+          "package.json"
+        ]
+      },
+      "purpose": "Upload deterministic React + TypeScript + Tailwind seed for EnterpriseUxAuditGovernanceHub."
+    },
+    {
+      "step": 4,
+      "tool": "publish_artifact",
+      "arguments": {
+        "artifactId": "<artifactId-from-step-2>",
+        "editorId": "<editorId-from-step-1>"
+      },
+      "purpose": "Compile and activate the seeded artifact in Magic Patterns before prompting."
+    },
+    {
+      "step": 5,
+      "tool": "send_prompt",
+      "arguments": {
+        "editorId": "<editorId-from-step-1>",
+        "prompt": "Evolve EnterpriseUxAuditGovernanceHub using Split Operations Canvas (Two-column master-detail split canvas: left queue with live status segmentation; right sticky inspection & human sign-off drawer so reviewers never lose list context.). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states."
+      },
+      "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed."
+    }
+  ],
+  "inspirationFlow": {
+    "createCall": {
+      "tool": "create_inspiration_document",
+      "arguments": {
+        "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub — 4 Structural UX Directions",
+        "repositoryUrl": "https://github.com/phlppgdfry/ai-ux-audit-redesign-agent",
+        "files": [
+          {
+            "name": "A: Split Operations Canvas",
+            "description": "Two-column master-detail split canvas: left queue with live status segmentation; right sticky inspection & human sign-off drawer so reviewers never lose list context."
+          },
+          {
+            "name": "B: Progressive Triage Feed",
+            "description": "Focused single-column progressive disclosure feed with inline expandable evidence cards, keyboard shortcut pills (J/K/A/R), and zero modal interruptions."
+          },
+          {
+            "name": "C: High-Density Operations Matrix",
+            "description": "Compact tabular command matrix optimized for high-volume dispatchers: monospace revision hashes, inline SLA badges, and batch idempotent retry bar."
+          },
+          {
+            "name": "D: Guided 4-Step Verification Wizard",
+            "description": "Stepped verification rail (1. Evidence Check → 2. Identity & Vocabulary Match → 3. Human Decision → 4. Idempotent Sync Receipt) reducing cognitive load for new reviewers."
+          }
+        ],
+        "baseline": {
+          "focus": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub primary triage and human approval surface",
+          "sharedCopy": "Remediated CTA contrast from 2.34:1 to 6.70:1 and added explicit HTTP 429 retry banner.",
+          "baselineStyle": "Northstar Enterprise Design System (#F8FAFC app bg, #FFFFFF card surface, #1D4ED8 primary accent, 10px card radius)"
+        }
+      }
+    },
+    "streamVariantCalls": [
+      {
+        "tool": "inspiration_add_variant",
+        "arguments": {
+          "inspirationId": "<id-from-create_inspiration_document>",
+          "variantId": "<variant-1-id>",
+          "name": "A: Split Operations Canvas",
+          "htmlByteLength": 5535
+        }
+      },
+      {
+        "tool": "inspiration_add_variant",
+        "arguments": {
+          "inspirationId": "<id-from-create_inspiration_document>",
+          "variantId": "<variant-2-id>",
+          "name": "B: Progressive Triage Feed",
+          "htmlByteLength": 5518
+        }
+      },
+      {
+        "tool": "inspiration_add_variant",
+        "arguments": {
+          "inspirationId": "<id-from-create_inspiration_document>",
+          "variantId": "<variant-3-id>",
+          "name": "C: High-Density Operations Matrix",
+          "htmlByteLength": 5508
+        }
+      },
+      {
+        "tool": "inspiration_add_variant",
+        "arguments": {
+          "inspirationId": "<id-from-create_inspiration_document>",
+          "variantId": "<variant-4-id>",
+          "name": "D: Guided 4-Step Verification Wizard",
+          "htmlByteLength": 5564
+        }
+      }
+    ]
+  }
+}

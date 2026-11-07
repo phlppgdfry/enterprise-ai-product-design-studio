@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enterprise AI Product Design Studio — Magic Patterns & BA/UX Workbench</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+      .mono {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+      }
+      @keyframes pulseSkeleton {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.55; }
+      }
+      .skeleton-pulse {
+        animation: pulseSkeleton 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Top Header -->
+    <header role="banner" class="bg-white border-b border-slate-300 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+              Magic Patterns MCP + BA/FA/UX Engine
+            </span>
+            <span id="mcp-badge" class="mono px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300">
+              Checking MCP & Skills...
+            </span>
+          </div>
+          <h1 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
+            Enterprise AI Product Design Studio
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-700">
+            Business Problem → Requirements & Traceability → Magic Patterns Seed & 4 Variants → 7-Point UX/WCAG Audit → Human Sign-Off → Production React
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <label for="case-selector" class="text-xs font-semibold text-slate-700">Enterprise Case:</label>
+          <select
+            id="case-selector"
+            class="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-700"
+          ></select>
+        </div>
+      </div>
+    </header>
+
+    <main role="main" class="max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 space-y-6 flex-1">
+      <!-- Pipeline Step Tabs -->
+      <nav aria-label="Studio Workflow Stages" class="grid grid-cols-2 sm:grid-cols-5 gap-2 bg-white p-2 rounded-[10px] border border-slate-300 shadow-sm">
+        <button type="button" data-tab="tab-blueprint" class="tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold bg-blue-700 text-white text-left">
+          1. BA Blueprint & Traceability
+        </button>
+        <button type="button" data-tab="tab-prototype" class="tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold bg-slate-100 text-slate-800 hover:bg-slate-200 text-left">
+          2. Interactive Prototype & 4 Variants
+        </button>
+        <button type="button" data-tab="tab-audit" class="tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold bg-slate-100 text-slate-800 hover:bg-slate-200 text-left">
+          3. 7-Point UX & WCAG Audit
+        </button>
+        <button type="button" data-tab="tab-mcp" class="tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold bg-slate-100 text-slate-800 hover:bg-slate-200 text-left">
+          4. Magic Patterns Seed & MCP
+        </button>
+        <button type="button" data-tab="tab-approval" class="tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold bg-slate-100 text-slate-800 hover:bg-slate-200 text-left">
+          5. Human Approval & Code Export
+        </button>
+      </nav>
+
+      <!-- Case Summary Banner -->
+      <section class="bg-white rounded-[10px] border border-slate-300 p-5 shadow-sm">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div>
+            <span id="case-domain" class="mono text-xs font-semibold text-blue-700 uppercase"></span>
+            <h2 id="case-title" class="text-lg font-bold text-slate-900 mt-0.5"></h2>
+            <p id="case-problem" class="text-sm text-slate-700 mt-1 max-w-4xl"></p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+            <div class="p-3 rounded-[6px] bg-slate-50 border border-slate-300 text-xs">
+              <div class="font-semibold text-slate-600">Target Repo</div>
+              <div id="case-repo" class="mono font-bold text-slate-900 mt-0.5"></div>
+            </div>
+            <div class="p-3 rounded-[6px] bg-slate-50 border border-slate-300 text-xs">
+              <div class="font-semibold text-slate-600">7-Point UX Audit</div>
+              <div id="case-audit-pill" class="mono font-bold text-emerald-800 mt-0.5">7/7 PASS</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 1: BA Blueprint, User Stories, Traceability Matrix & UAT Plan -->
+      <section id="tab-blueprint" class="tab-panel space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900 mb-3">
+              Functional & Non-Functional Requirements
+            </h3>
+            <div id="requirements-list" class="space-y-2.5"></div>
+          </div>
+
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900 mb-3">
+              User Stories & Gherkin Acceptance Criteria
+            </h3>
+            <div id="stories-list" class="space-y-3"></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+          <h3 class="text-base font-bold text-slate-900 mb-2">
+            End-to-End Traceability Matrix & UAT Test Plan
+          </h3>
+          <p class="text-xs text-slate-700 mb-4">
+            Every business requirement maps deterministically to a User Story, a concrete React UI component, 4 required operational states, and an executable UAT test case.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-slate-300 bg-slate-100 text-slate-800">
+                  <th class="p-2.5 font-semibold">Req ID</th>
+                  <th class="p-2.5 font-semibold">Requirement</th>
+                  <th class="p-2.5 font-semibold">Priority</th>
+                  <th class="p-2.5 font-semibold">Stories</th>
+                  <th class="p-2.5 font-semibold">Target UI Component</th>
+                  <th class="p-2.5 font-semibold">Verified States</th>
+                  <th class="p-2.5 font-semibold">UAT ID</th>
+                </tr>
+              </thead>
+              <tbody id="traceability-tbody" class="divide-y divide-slate-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: Interactive Prototype & 4 Magic Patterns Inspiration Variants -->
+      <section id="tab-prototype" class="tab-panel hidden space-y-6">
+        <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pb-4 border-b border-slate-300">
+            <div>
+              <h3 class="text-base font-bold text-slate-900">
+                4 Divergent Magic Patterns Inspiration Directions
+              </h3>
+              <p class="text-xs text-slate-700 mt-0.5">
+                Grounded in identical Northstar design tokens and verbatim product copy; only the structural UX direction changes.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-1.5" id="variant-selector-group"></div>
+          </div>
+
+          <!-- State Switcher inside Live Prototype Preview -->
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 bg-slate-100 p-3 rounded-[6px] border border-slate-300">
+            <div id="active-variant-summary" class="text-xs text-slate-800 font-medium"></div>
+            <div class="flex flex-wrap items-center gap-1.5" role="group" aria-label="Simulate UI states">
+              <span class="text-xs font-semibold text-slate-700 mr-1">Simulate UI State:</span>
+              <button type="button" data-state="interactive" class="state-btn px-2.5 py-1 rounded text-xs font-semibold bg-blue-700 text-white">
+                INTERACTIVE
+              </button>
+              <button type="button" data-state="empty" class="state-btn px-2.5 py-1 rounded text-xs font-semibold bg-white text-slate-800 border border-slate-300">
+                EMPTY
+              </button>
+              <button type="button" data-state="loading" class="state-btn px-2.5 py-1 rounded text-xs font-semibold bg-white text-slate-800 border border-slate-300">
+                LOADING
+              </button>
+              <button type="button" data-state="error" class="state-btn px-2.5 py-1 rounded text-xs font-semibold bg-white text-slate-800 border border-slate-300">
+                ERROR (HTTP 503)
+              </button>
+            </div>
+          </div>
+
+          <!-- Live Rendered Interactive Prototype Canvas -->
+          <div id="live-prototype-canvas" class="mt-5 p-5 rounded-[10px] bg-slate-50 border border-slate-300"></div>
+        </div>
+      </section>
+
+      <!-- TAB 3: 7-Dimension UX, WCAG 2.1 Contrast & Before/After Audit -->
+      <section id="tab-audit" class="tab-panel hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">Before (Legacy UI Audit)</h3>
+            <p class="text-xs text-slate-700 mt-1">
+              Detected UX & WCAG 2.1 defects in the unvalidated legacy screen:
+            </p>
+            <div id="legacy-issues-list" class="mt-3 space-y-3"></div>
+          </div>
+
+          <div class="lg:col-span-2 bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">
+              After (Redesigned Northstar Token Contrast Verification)
+            </h3>
+            <p class="text-xs text-slate-700 mt-1">
+              Mathematical WCAG 2.1 relative luminance contrast ratios across all semantic token pairs (minimum 4.5:1 required for AA normal text):
+            </p>
+            <div id="contrast-pairs-grid" class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+          <h3 class="text-base font-bold text-slate-900 mb-3">
+            7-Dimension Enterprise UX & Prototype-to-Code Scorecard
+          </h3>
+          <div id="dimensions-list" class="space-y-3"></div>
+        </div>
+      </section>
+
+      <!-- TAB 4: Magic Patterns Seed Bundle & MCP Workflow -->
+      <section id="tab-mcp" class="tab-panel hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">
+              Local Agent & MCP Readiness Status
+            </h3>
+            <p class="text-xs text-slate-700 mt-1">
+              Live check of your configured coding agents and official <code>magicpatterns/agent-plugins</code> skills:
+            </p>
+            <div id="mcp-clients-list" class="mt-3 space-y-2"></div>
+            <h4 class="text-xs font-bold uppercase text-slate-700 mt-4 mb-2">
+              Installed Official Magic Patterns Skills
+            </h4>
+            <div id="mcp-skills-list" class="flex flex-wrap gap-1.5"></div>
+          </div>
+
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">
+              MCP Tool Call Sequence (<code>https://mcp.magicpatterns.com/mcp</code>)
+            </h3>
+            <p class="text-xs text-slate-700 mt-1">
+              Exact deterministic seed + creative prompt sequence executed by <code>upload-to-magic-patterns</code>, <code>prototype</code>, and <code>inspiration</code>:
+            </p>
+            <pre id="mcp-workflow-json" class="mono text-xs bg-slate-900 text-slate-100 p-4 rounded-[8px] mt-3 overflow-x-auto max-h-80"></pre>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h3 class="text-base font-bold text-slate-900">
+              Generated Magic Patterns React Seed Files (<code>recreate-as-react</code> Contract)
+            </h3>
+            <div id="seed-file-tabs" class="flex flex-wrap gap-1.5"></div>
+          </div>
+          <pre id="seed-file-code" class="mono text-xs bg-slate-900 text-slate-100 p-4 rounded-[8px] overflow-x-auto max-h-96"></pre>
+        </div>
+      </section>
+
+      <!-- TAB 5: Human-in-the-Loop Approval Gate & Production Export -->
+      <section id="tab-approval" class="tab-panel hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">
+              Human-in-the-Loop Approval Gate
+            </h3>
+            <p class="text-xs text-slate-700 mt-1">
+              Production React code export is blocked until a human reviewer signs off on a specific variant and all 7 UX & WCAG dimensions pass.
+            </p>
+            <form id="approval-form" class="mt-4 space-y-3">
+              <div>
+                <label for="reviewer-name" class="block text-xs font-semibold text-slate-800 mb-1">
+                  Reviewer Name
+                </label>
+                <input
+                  id="reviewer-name"
+                  type="text"
+                  value="Philippe Godfroy"
+                  required
+                  class="w-full rounded-[6px] border border-slate-300 px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                />
+              </div>
+              <div>
+                <label for="approval-variant" class="block text-xs font-semibold text-slate-800 mb-1">
+                  Approved Magic Patterns Direction
+                </label>
+                <select
+                  id="approval-variant"
+                  class="w-full rounded-[6px] border border-slate-300 px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                >
+                  <option value="A">Variant A — Split Operations Canvas</option>
+                  <option value="B">Variant B — Progressive Triage Feed</option>
+                  <option value="C">Variant C — High-Density Operations Matrix</option>
+                  <option value="D">Variant D — Guided 4-Step Verification Wizard</option>
+                </select>
+              </div>
+              <div>
+                <label for="approval-rationale" class="block text-xs font-semibold text-slate-800 mb-1">
+                  Governance Approval Rationale
+                </label>
+                <textarea
+                  id="approval-rationale"
+                  rows="3"
+                  required
+                  class="w-full rounded-[6px] border border-slate-300 p-2.5 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                >Verified 100% FR/NFR traceability, 6.70:1 CTA contrast, and interactive/empty/loading/error states for production integration.</textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full px-4 py-2.5 rounded-[6px] bg-blue-700 text-white text-xs font-semibold hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700"
+              >
+                Approve Prototype & Export Production React Component
+              </button>
+            </form>
+          </div>
+
+          <div class="bg-white rounded-[10px] border border-slate-300 p-5">
+            <h3 class="text-base font-bold text-slate-900">
+              Production Code Export Receipt (<code>integrate-magic-patterns-design</code>)
+            </h3>
+            <div id="approval-output" class="mt-3 text-xs text-slate-700">
+              Submit the Human Approval Gate on the left to generate the stripped production component and verification receipt.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      let currentCaseId = 'skillsbridge-review-console';
+      let currentVariantKey = 'A';
+      let currentSimState = 'interactive';
+      let currentStudioData = null;
+
+      async function initWorkbench() {
+        const res = await fetch('/api/cases');
+        const meta = await res.json();
+
+        const mcpBadge = document.getElementById('mcp-badge');
+        mcpBadge.textContent = meta.setup.allClientsConfigured
+          ? `MCP Active (${meta.setup.clients.length} agents · ${meta.setup.installedSkills.length} skills)`
+          : 'MCP Setup Partial';
+
+        const selector = document.getElementById('case-selector');
+        selector.innerHTML = meta.cases
+          .map((c) => `<option value="${c.id}">${c.title}</option>`)
+          .join('');
+        selector.addEventListener('change', (e) => {
+          currentCaseId = e.target.value;
+          loadStudioCase();
+        });
+
+        // Render MCP clients & skills
+        document.getElementById('mcp-clients-list').innerHTML = meta.setup.clients
+          .map(
+            (c) => `
+            <div class="flex items-center justify-between p-2 rounded bg-slate-50 border border-slate-200 text-xs">
+              <span class="font-semibold text-slate-900">${c.client} <span class="mono text-slate-600">(${c.configPath})</span></span>
+              <span class="px-2 py-0.5 rounded-full font-semibold ${
+                c.configured ? 'bg-emerald-50 text-emerald-800 border border-emerald-300' : 'bg-amber-50 text-amber-800'
+              }">${c.configured ? 'Configured' : 'Missing'}</span>
+            </div>`
+          )
+          .join('');
+
+        document.getElementById('mcp-skills-list').innerHTML = meta.setup.installedSkills
+          .map(
+            (s) => `
+            <span class="mono px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+              ✓ ${s.name}
+            </span>`
+          )
+          .join('');
+
+        await loadStudioCase();
+      }
+
+      async function loadStudioCase() {
+        const res = await fetch(`/api/studio/${encodeURIComponent(currentCaseId)}?variant=${currentVariantKey}`);
+        currentStudioData = await res.json();
+        renderAllPanels();
+      }
+
+      function renderAllPanels() {
+        const { blueprint, audit, artifacts, fixtures } = currentStudioData;
+
+        document.getElementById('case-domain').textContent = `${blueprint.domain} · Persona: ${blueprint.persona}`;
+        document.getElementById('case-title').textContent = blueprint.title;
+        document.getElementById('case-problem').textContent = blueprint.businessProblem;
+        document.getElementById('case-repo').textContent = blueprint.targetRepository;
+        document.getElementById('case-audit-pill').textContent = `${audit.passedDimensions}/${audit.totalDimensions} PASS (min ${audit.beforeVsAfterContrast.minRedesignedContrast}:1 WCAG AA)`;
+
+        // Tab 1: Requirements & User Stories & Traceability
+        document.getElementById('requirements-list').innerHTML = blueprint.requirements
+          .map(
+            (r) => `
+            <div class="p-3 rounded-[6px] bg-slate-50 border border-slate-200 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="mono font-bold text-blue-700">${r.id} · ${r.title}</span>
+                <span class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-semibold">${r.priority}</span>
+              </div>
+              <p class="text-slate-700 mt-1">${r.statement}</p>
+              <div class="mono text-[11px] text-slate-600 mt-1">UI Target: ${r.uiElement}</div>
+            </div>`
+          )
+          .join('');
+
+        document.getElementById('stories-list').innerHTML = blueprint.userStories
+          .map(
+            (u) => `
+            <div class="p-3 rounded-[6px] bg-slate-50 border border-slate-200 text-xs">
+              <div class="mono font-bold text-blue-700">${u.id} (Covers: ${u.requirementIds.join(', ')})</div>
+              <p class="text-slate-900 font-medium mt-1">
+                As a <strong>${u.asA}</strong>, I want <strong>${u.iWant}</strong> so that <strong>${u.soThat}</strong>.
+              </p>
+              <ul class="mt-2 space-y-1 mono text-[11px] text-slate-700 bg-white p-2 rounded border border-slate-200">
+                ${u.acceptanceCriteria.map((ac) => `<li>• ${ac}</li>`).join('')}
+              </ul>
+            </div>`
+          )
+          .join('');
+
+        document.getElementById('traceability-tbody').innerHTML = blueprint.traceabilityMatrix
+          .map(
+            (row) => `
+            <tr>
+              <td class="p-2.5 mono font-bold text-blue-700">${row.requirementId}</td>
+              <td class="p-2.5 font-medium text-slate-900">${row.requirementTitle}</td>
+              <td class="p-2.5">${row.priority}</td>
+              <td class="p-2.5 mono">${row.userStoryIds.join(', ')}</td>
+              <td class="p-2.5 mono text-slate-800">${row.uiComponent}</td>
+              <td class="p-2.5 mono text-emerald-800">${row.verifiedStates.join(' · ')}</td>
+              <td class="p-2.5 mono font-bold">${row.uatTestCaseId}</td>
+            </tr>`
+          )
+          .join('');
+
+        // Tab 2: Variant buttons + Live Prototype Preview
+        document.getElementById('variant-selector-group').innerHTML = artifacts.inspirationVariants
+          .map(
+            (v) => `
+            <button
+              type="button"
+              onclick="selectVariant('${v.variantKey}')"
+              class="px-3 py-1.5 rounded-[6px] text-xs font-semibold transition ${
+                v.variantKey === currentVariantKey
+                  ? 'bg-blue-700 text-white'
+                  : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
+              }"
+            >
+              Variant ${v.variantKey}: ${v.name}
+            </button>`
+          )
+          .join('');
+
+        document.getElementById('active-variant-summary').textContent =
+          `Active Direction (${artifacts.selectedVariant.variantKey} — ${artifacts.selectedVariant.name}): ${artifacts.selectedVariant.directionThesis}`;
+
+        renderLivePrototypeCanvas(fixtures, artifacts.selectedVariant);
+
+        // Tab 3: UX Audit & Contrast
+        document.getElementById('legacy-issues-list').innerHTML = audit.legacyIssuesRemediated
+          .map(
+            (iss) => `
+            <div class="p-3 rounded-[6px] bg-red-50 border border-red-300 text-xs text-red-900">
+              <div class="font-bold">${iss.id} · ${iss.category} (${iss.severity.toUpperCase()})</div>
+              <p class="mt-1">${iss.description}</p>
+            </div>`
+          )
+          .join('');
+
+        document.getElementById('contrast-pairs-grid').innerHTML = audit.beforeVsAfterContrast.redesignedPairs
+          .map(
+            (p) => `
+            <div class="p-3 rounded-[6px] bg-slate-50 border border-slate-200 text-xs flex items-center justify-between gap-2">
+              <div>
+                <div class="font-semibold text-slate-900">${p.label}</div>
+                <div class="mono text-[11px] text-slate-600 mt-0.5">${p.fg} on ${p.bg}</div>
+              </div>
+              <span class="mono px-2.5 py-1 rounded-full font-bold bg-emerald-50 text-emerald-800 border border-emerald-300 shrink-0">
+                ${p.ratio}:1 AA
+              </span>
+            </div>`
+          )
+          .join('');
+
+        document.getElementById('dimensions-list').innerHTML = audit.dimensions
+          .map(
+            (d) => `
+            <div class="p-3.5 rounded-[6px] bg-slate-50 border border-slate-200 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="font-bold text-slate-900">${d.dimension}</span>
+                <span class="mono px-2.5 py-0.5 rounded-full font-bold bg-emerald-50 text-emerald-800 border border-emerald-300">
+                  PASS
+                </span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                <div class="p-2 rounded bg-red-50/70 border border-red-200 text-red-900">
+                  <strong>Before:</strong> ${d.beforeState}
+                </div>
+                <div class="p-2 rounded bg-emerald-50/70 border border-emerald-200 text-emerald-900">
+                  <strong>After:</strong> ${d.afterState}
+                </div>
+              </div>
+            </div>`
+          )
+          .join('');
+
+        // Tab 4: MCP Workflow & Seed Files
+        document.getElementById('mcp-workflow-json').textContent = JSON.stringify(
+          artifacts.mcpWorkflow,
+          null,
+          2
+        );
+
+        const fileNames = Object.keys(artifacts.seedFiles);
+        document.getElementById('seed-file-tabs').innerHTML = fileNames
+          .map(
+            (fname, idx) => `
+            <button
+              type="button"
+              onclick="showSeedFile('${fname}')"
+              class="seed-tab-btn mono px-2.5 py-1 rounded text-xs font-semibold ${
+                idx === 0 ? 'bg-blue-700 text-white' : 'bg-slate-100 text-slate-800'
+              }"
+            >
+              ${fname}
+            </button>`
+          )
+          .join('');
+        showSeedFile(fileNames[0]);
+      }
+
+      function renderLivePrototypeCanvas(fixtures, selectedVariant) {
+        const container = document.getElementById('live-prototype-canvas');
+        if (currentSimState === 'loading') {
+          container.innerHTML = `
+            <div aria-busy="true" class="p-6 rounded-[10px] bg-white border border-slate-300 space-y-3">
+              <div class="h-5 w-1/3 bg-slate-200 rounded skeleton-pulse"></div>
+              <div class="h-16 w-full bg-slate-100 rounded-[10px] skeleton-pulse"></div>
+              <div class="h-16 w-full bg-slate-100 rounded-[10px] skeleton-pulse"></div>
+            </div>`;
+          return;
+        }
+        if (currentSimState === 'empty') {
+          container.innerHTML = `
+            <div class="p-8 text-center rounded-[10px] bg-white border border-slate-300">
+              <h4 class="text-base font-bold text-slate-900">No Records Pending in Current Filter</h4>
+              <p class="text-xs text-slate-700 mt-1">All candidate revisions have been verified or no items match the selected filter.</p>
+              <button type="button" onclick="setSimState('interactive')" class="mt-3 px-3 py-1.5 rounded bg-blue-700 text-white text-xs font-semibold">
+                Restore Interactive Queue
+              </button>
+            </div>`;
+          return;
+        }
+        if (currentSimState === 'error') {
+          container.innerHTML = `
+            <div role="alert" class="p-5 rounded-[10px] bg-red-50 border border-red-800 text-red-900 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h4 class="text-sm font-bold">Destination Endpoint Outage (HTTP 503 Service Unavailable)</h4>
+                <p class="text-xs mt-1">Idempotency key lock active. Retrying will reuse the revision token and prevent duplicate writes.</p>
+              </div>
+              <button type="button" onclick="setSimState('interactive')" class="px-3.5 py-2 rounded bg-red-800 text-white text-xs font-semibold shrink-0">
+                Retry Idempotent Sync
+              </button>
+            </div>`;
+          return;
+        }
+
+        // Interactive state
+        container.innerHTML = `
+          <div class="grid ${selectedVariant.layoutClass}">
+            <div class="${selectedVariant.primaryPaneSpan} space-y-3">
+              ${fixtures
+                .map(
+                  (item) => `
+                  <article class="p-4 rounded-[10px] bg-white border border-slate-300 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <span class="mono text-xs font-bold text-blue-700">${item.id} · ${item.revisionHash}</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                        item.status === 'APPROVED'
+                          ? 'bg-emerald-50 text-emerald-800 border border-emerald-700'
+                          : item.status === 'IDENTITY_BLOCKED'
+                          ? 'bg-red-50 text-red-800 border border-red-700'
+                          : 'bg-amber-50 text-amber-800 border border-amber-700'
+                      }">${item.status}</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-900 mt-1">${item.employeeName}</h4>
+                    <p class="text-xs text-slate-700">${item.employeeRole}</p>
+                    <p class="text-xs text-slate-900 mt-2">${item.evidenceSummary}</p>
+                    <div class="mono text-[11px] text-slate-600 mt-2">${item.escoSkillName} (${item.escoUri})</div>
+                  </article>`
+                )
+                .join('')}
+            </div>
+            <aside class="${selectedVariant.secondaryPaneSpan} p-4 rounded-[10px] bg-white border border-slate-300 shadow-sm">
+              <div class="mono text-xs font-bold text-blue-700">HUMAN REVIEW GATE (${selectedVariant.variantKey})</div>
+              <h4 class="text-sm font-bold text-slate-900 mt-1">${fixtures[0]?.escoSkillName || ''}</h4>
+              <p class="text-xs text-slate-700 mt-1">${fixtures[0]?.evidenceSummary || ''}</p>
+              <div class="mt-4 flex gap-2">
+                <button type="button" class="px-3 py-2 rounded-[6px] bg-blue-700 text-white text-xs font-semibold">
+                  Approve Current Revision
+                </button>
+                <button type="button" class="px-3 py-2 rounded-[6px] bg-red-50 text-red-800 border border-red-800 text-xs font-semibold">
+                  Reject
+                </button>
+              </div>
+            </aside>
+          </div>`;
+      }
+
+      window.selectVariant = function (variantKey) {
+        currentVariantKey = variantKey;
+        document.getElementById('approval-variant').value = variantKey;
+        loadStudioCase();
+      };
+
+      window.setSimState = function (state) {
+        currentSimState = state;
+        document.querySelectorAll('.state-btn').forEach((btn) => {
+          const active = btn.dataset.state === state;
+          btn.className = `state-btn px-2.5 py-1 rounded text-xs font-semibold ${
+            active ? 'bg-blue-700 text-white' : 'bg-white text-slate-800 border border-slate-300'
+          }`;
+        });
+        if (currentStudioData) {
+          renderLivePrototypeCanvas(
+            currentStudioData.fixtures,
+            currentStudioData.artifacts.selectedVariant
+          );
+        }
+      };
+
+      window.showSeedFile = function (fileName) {
+        if (!currentStudioData) return;
+        document.getElementById('seed-file-code').textContent =
+          currentStudioData.artifacts.seedFiles[fileName] || '';
+      };
+
+      // Tab navigation
+      document.querySelectorAll('.tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.tab;
+          document.querySelectorAll('.tab-panel').forEach((p) => p.classList.add('hidden'));
+          document.getElementById(target).classList.remove('hidden');
+          document.querySelectorAll('.tab-btn').forEach((b) => {
+            const isTarget = b.dataset.tab === target;
+            b.className = `tab-btn px-3 py-2 rounded-[6px] text-xs font-semibold text-left ${
+              isTarget ? 'bg-blue-700 text-white' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'
+            }`;
+          });
+        });
+      });
+
+      // State simulation buttons
+      document.querySelectorAll('.state-btn').forEach((btn) => {
+        btn.addEventListener('click', () => window.setSimState(btn.dataset.state));
+      });
+
+      // Approval form handler
+      document.getElementById('approval-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const reviewer = document.getElementById('reviewer-name').value;
+        const variantKey = document.getElementById('approval-variant').value;
+        const rationale = document.getElementById('approval-rationale').value;
+
+        const res = await fetch('/api/approve', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            caseId: currentCaseId,
+            reviewer,
+            variantKey,
+            rationale,
+          }),
+        });
+        const data = await res.json();
+        const out = document.getElementById('approval-output');
+        if (!res.ok) {
+          out.innerHTML = `<div class="p-3 rounded bg-red-50 border border-red-300 text-red-900 font-semibold">${data.error}</div>`;
+          return;
+        }
+        out.innerHTML = `
+          <div class="space-y-3">
+            <div class="p-3 rounded bg-emerald-50 border border-emerald-300 text-emerald-900">
+              <div class="font-bold">✓ ${data.status} (${data.selectedVariant.variantKey}: ${data.selectedVariant.name})</div>
+              <div class="mt-1">Reviewer: <strong>${data.reviewer}</strong> · Target Repo: <span class="mono">${data.targetRepository}</span></div>
+              <div class="mono text-[11px] mt-1">Output Path: ${data.productionFilePath} · Checks: ${data.verificationSummary.passedDimensions}</div>
+            </div>
+            <div>
+              <div class="font-semibold text-slate-800 mb-1">Discarded Prototype Scaffolding:</div>
+              <ul class="list-disc pl-4 space-y-0.5 text-slate-700">
+                ${data.discardedScaffolding.map((s) => `<li>${s}</li>`).join('')}
+              </ul>
+            </div>
+            <pre class="mono text-[11px] bg-slate-900 text-slate-100 p-3 rounded max-h-64 overflow-x-auto">${data.productionComponentCode.replace(/</g, '&lt;')}</pre>
+          </div>`;
+      });
+
+      initWorkbench();
+    </script>
+  </body>
+</html>

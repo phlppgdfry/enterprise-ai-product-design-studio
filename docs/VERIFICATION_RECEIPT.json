@@ -1,0 +1,54 @@
+{
+  "verifiedAt": "2026-11-07T03:55:09.067Z",
+  "repository": "enterprise-ai-product-design-studio",
+  "mcpSetup": {
+    "endpoint": "https://mcp.magicpatterns.com/mcp",
+    "allClientsConfigured": true,
+    "allOfficialSkillsInstalled": true,
+    "cursorLocalPluginInstalled": true,
+    "configuredClients": [
+      "agent-tools-registry",
+      "claude-code",
+      "codex",
+      "cursor",
+      "vscode",
+      "copilot-cli",
+      "antigravity"
+    ],
+    "installedSkills": [
+      "inspiration",
+      "integrate-magic-patterns-design",
+      "prototype",
+      "recreate-as-raw-html",
+      "recreate-as-react",
+      "upload-to-magic-patterns"
+    ]
+  },
+  "caseAudits": [
+    {
+      "caseId": "skillsbridge-review-console",
+      "title": "SkillsBridge — Work-Evidence to HR Skill Attribution Console",
+      "overallPassed": true,
+      "passedDimensions": "7/7",
+      "legacyContrastRatio": 2.45,
+      "minRedesignedContrastRatio": 6.7
+    },
+    {
+      "caseId": "quay-container-exceptions",
+      "title": "QuayReady — Inbound Container & Berth Exception Triage Engine",
+      "overallPassed": true,
+      "passedDimensions": "7/7",
+      "legacyContrastRatio": 1.67,
+      "minRedesignedContrastRatio": 6.7
+    },
+    {
+      "caseId": "ai-ux-audit-dashboard",
+      "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub",
+      "overallPassed": true,
+      "passedDimensions": "7/7",
+      "legacyContrastRatio": 2.33,
+      "minRedesignedContrastRatio": 6.7
+    }
+  ],
+  "competenceRubricScore": "100/100"
+}

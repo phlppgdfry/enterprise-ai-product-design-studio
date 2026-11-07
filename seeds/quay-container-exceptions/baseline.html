@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuayReady — Inbound Container & Berth Exception Triage Engine — Split Operations Canvas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --accent: #1D4ED8;
+        --bg-app: #F8FAFC;
+      }
+      body {
+        font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+        background-color: #F8FAFC;
+        color: #0F172A;
+      }
+      @keyframes statusPulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.03); opacity: 0.82; }
+      }
+      .signature-motion {
+        animation: statusPulse 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="p-6">
+    <header role="banner" class="max-w-6xl mx-auto mb-6 p-5 rounded-[10px] bg-[#FFFFFF] border border-[#CBD5E1]">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <span class="signature-motion inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF6FF] text-[#1D4ED8]">
+            A: Split Operations Canvas
+          </span>
+          <h1 class="text-xl font-bold text-[#0F172A] mt-2">QuayReady — Inbound Container & Berth Exception Triage Engine</h1>
+          <p class="text-sm text-[#334155]">Two-column master-detail split canvas: left queue with live status segmentation; right sticky inspection & human sign-off drawer so reviewers never lose list context.</p>
+        </div>
+      </div>
+    </header>
+    <main role="main" class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <section aria-label="Primary Records" class="lg:col-span-7 space-y-3">
+        
+        <article class="p-4 rounded-[10px] border border-[#CBD5E1] bg-[#FFFFFF]">
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-mono text-xs font-semibold text-[#1D4ED8]">CNT-901 · eta+185m</span>
+            <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:#FFFBEB;color:#92400E;border:1px solid #92400E">PENDING_REVIEW</span>
+          </div>
+          <h3 class="text-sm font-bold text-[#0F172A] mt-1">MSCU-849201-4 (40ft HC Reefer)</h3>
+          <p class="text-xs text-[#334155]">Berth Q-14 · Carrier: MSC Mediterranean</p>
+          <p class="text-sm text-[#0F172A] mt-2">Physical seal #SL-99214 does not match manifest #SL-99280; reefer temp +4.2°C (threshold +2.0°C).</p>
+          <p class="font-mono text-xs text-[#475569] mt-2">Customs & Cold-Chain Gate Hold Required (urn:port:sla:reefer-seal-protocol-v3)</p>
+        </article>
+
+        <article class="p-4 rounded-[10px] border border-[#CBD5E1] bg-[#FFFFFF]">
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-mono text-xs font-semibold text-[#1D4ED8]">CNT-902 · eta+0m</span>
+            <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:#F0FDF4;color:#166534;border:1px solid #166534">APPROVED</span>
+          </div>
+          <h3 class="text-sm font-bold text-[#0F172A] mt-1">MAEU-331094-0 (40ft Dry)</h3>
+          <p class="text-xs text-[#334155]">Berth Q-08 · Carrier: Maersk Line</p>
+          <p class="text-sm text-[#0F172A] mt-2">Customs NCTS clearance verified; seal intact; scheduled for Bay W-04 cross-docking.</p>
+          <p class="font-mono text-xs text-[#475569] mt-2">Cleared for Automated Gate Handover (urn:port:sla:standard-gate-clearance)</p>
+        </article>
+
+        <article class="p-4 rounded-[10px] border border-[#CBD5E1] bg-[#FFFFFF]">
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-mono text-xs font-semibold text-[#1D4ED8]">CNT-903 · eta+240m</span>
+            <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full" style="background:#FEF2F2;color:#991B1B;border:1px solid #991B1B">IDENTITY_BLOCKED</span>
+          </div>
+          <h3 class="text-sm font-bold text-[#0F172A] mt-1">CMAU-772190-8 (20ft Tank)</h3>
+          <p class="text-xs text-[#334155]">Berth Q-19 · Carrier: CMA CGM</p>
+          <p class="text-sm text-[#0F172A] mt-2">Missing ADR hazardous cargo declaration sheet; terminal crane discharge paused pending DG sign-off.</p>
+          <p class="font-mono text-xs text-[#475569] mt-2">ADR Dangerous Goods Documentation Hold (urn:port:sla:adr-dg-hold-protocol)</p>
+        </article>
+      </section>
+      <aside aria-label="Human Verification Panel" class="lg:col-span-5 p-5 rounded-[10px] bg-[#FFFFFF] border border-[#CBD5E1]">
+        <h2 class="text-base font-bold text-[#0F172A]">Human Review Gate</h2>
+        <p class="text-xs text-[#334155] mt-1">Physical seal #SL-99214 does not match manifest #SL-99280; reefer temp +4.2°C (threshold +2.0°C).</p>
+        <div class="mt-4 flex gap-2">
+          <button type="button" class="px-4 py-2 rounded-[6px] bg-[#1D4ED8] text-[#FFFFFF] text-xs font-semibold">Approve Current Revision</button>
+          <button type="button" class="px-4 py-2 rounded-[6px] bg-[#FEF2F2] text-[#991B1B] border border-[#991B1B] text-xs font-semibold">Reject</button>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>
