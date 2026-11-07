@@ -1,0 +1,26 @@
+name: Validate Studio & UX/WCAG Engine
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate Magic Patterns seeds
+        run: npm run generate:seeds
+
+      - name: Run unit, WCAG contrast, and API tests
+        run: npm test

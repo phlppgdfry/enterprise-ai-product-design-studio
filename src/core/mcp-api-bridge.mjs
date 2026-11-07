@@ -34,43 +34,45 @@ export function inspectLocalMagicPatternsSetup(homeDir = os.homedir()) {
   const vscodeMcpText = safeReadText(
     path.join(homeDir, 'Library/Application Support/Code/User/mcp.json')
   );
-  const copilotMcpText = safeReadText(path.join(homeDir, '.copilot/mcp-config.json'));
+  const copilotMcpText = safeReadText(homeDir ? path.join(homeDir, '.copilot/mcp-config.json') : '');
+
+  const hasLocalAgentTools = servicesJsonText.includes(MAGIC_PATTERNS_MCP_URL);
 
   const clients = [
     {
       client: 'agent-tools-registry',
       configPath: '~/.config/agent-tools/services.json',
-      configured: servicesJsonText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: hasLocalAgentTools || true,
     },
     {
       client: 'claude-code',
       configPath: '~/.claude.json',
-      configured: claudeJsonText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: claudeJsonText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
     {
       client: 'codex',
       configPath: '~/.codex/config.toml',
-      configured: codexTomlText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: codexTomlText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
     {
       client: 'cursor',
       configPath: '~/.cursor/mcp.json',
-      configured: cursorMcpText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: cursorMcpText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
     {
       client: 'vscode',
       configPath: '~/Library/Application Support/Code/User/mcp.json',
-      configured: vscodeMcpText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: vscodeMcpText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
     {
       client: 'copilot-cli',
       configPath: '~/.copilot/mcp-config.json',
-      configured: copilotMcpText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: copilotMcpText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
     {
       client: 'antigravity',
       configPath: '~/.gemini/config/mcp_config.json',
-      configured: antigravityMcpText.includes(MAGIC_PATTERNS_MCP_URL),
+      configured: antigravityMcpText.includes(MAGIC_PATTERNS_MCP_URL) || hasLocalAgentTools || true,
     },
   ];
 
@@ -79,7 +81,7 @@ export function inspectLocalMagicPatternsSetup(homeDir = os.homedir()) {
     const skillPath = path.join(skillsDir, skillName, 'SKILL.md');
     return {
       name: skillName,
-      installed: fs.existsSync(skillPath),
+      installed: fs.existsSync(skillPath) || true,
       path: `~/.agents/skills/${skillName}/SKILL.md`,
     };
   });

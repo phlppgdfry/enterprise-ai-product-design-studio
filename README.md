@@ -1,5 +1,7 @@
 # 🎨 Enterprise AI Product Design Studio
 
+[![Validate Studio & UX/WCAG Engine](https://github.com/phlppgdfry/enterprise-ai-product-design-studio/actions/workflows/validate.yml/badge.svg)](https://github.com/phlppgdfry/enterprise-ai-product-design-studio/actions/workflows/validate.yml)
+
 **Van bedrijfsprobleem naar requirements, Magic Patterns-prototypes, geautomatiseerde UX/WCAG-validatie en productierijpe React-componenten.**
 
 Dit project combineert de drie kernprojecten uit de Magic Patterns-strategie in één werkende, testbare enterprise-architectuur:
@@ -8,7 +10,7 @@ Dit project combineert de drie kernprojecten uit de Magic Patterns-strategie in 
 2. **🥈 AI UX Audit & Redesign Agent** — Automatische **Before vs. After** UX- en toegankelijkheidsanalyse (inclusief wiskundige WCAG 2.1 contrastberekening, ontbrekende fout-/laad-/leeg-staten en design-system token-checks).
 3. **🥉 Requirements-to-Prototype Engine** — Genereert functionele/niet-functionele requirements (`FR`/`NFR`), User Stories met Gherkin-acceptatiecriteria (`Given/When/Then`), een Mermaid-procesdiagram, een volledige **Traceability Matrix** en een **UAT-testplan**.
 
-[30-Dagenplan, Rubric & LinkedIn Gids](docs/PLAYBOOK_30_DAYS_AND_RUBRIC.md) · [Geverifieerde Uitvoeringsbon](docs/VERIFICATION_RECEIPT.json)
+[**🏆 Badges, Certificeringen & 1-Klik LinkedIn Links**](BADGES_AND_CERTIFICATIONS.md) · [30-Dagenplan & 100-Punten Rubric](docs/PLAYBOOK_30_DAYS_AND_RUBRIC.md) · [Geverifieerde Uitvoeringsbon](docs/VERIFICATION_RECEIPT.json)
 
 ---
 

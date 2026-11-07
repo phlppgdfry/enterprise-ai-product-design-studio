@@ -11,7 +11,37 @@ import {
   computeCompetenceRubric,
 } from '../src/core/studio-engine.mjs';
 import { inspectLocalMagicPatternsSetup } from '../src/core/mcp-api-bridge.mjs';
-import { createStudioServer } from '../src/server.mjs';
+import apiHandler from '../api/index.mjs';
+
+function invokeApi(method, url, body = null) {
+  return new Promise((resolve, reject) => {
+    const req = {
+      method,
+      url,
+      headers: { host: '127.0.0.1:4180' },
+      body,
+    };
+    const headers = {};
+    const res = {
+      statusCode: 200,
+      setHeader(k, v) {
+        headers[k.toLowerCase()] = v;
+      },
+      end(payload) {
+        try {
+          resolve({
+            status: this.statusCode,
+            headers,
+            json: JSON.parse(payload),
+          });
+        } catch (err) {
+          reject(err);
+        }
+      },
+    };
+    apiHandler(req, res).catch(reject);
+  });
+}
 
 test('WCAG 2.1 contrast math identifies legacy failures and verifies Northstar AA tokens', () => {
   const legacyRatio = computeContrastRatio('#94A3B8', '#F8FAFC');
@@ -109,40 +139,24 @@ test('inspectLocalMagicPatternsSetup and computeCompetenceRubric verify local en
   assert.equal(rubric.totalMax, 100);
 });
 
-test('Studio HTTP server endpoints respond with valid blueprints, audits, and approvals', async () => {
-  const server = createStudioServer();
-  await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-  const { port } = server.address();
-  const baseUrl = `http://127.0.0.1:${port}`;
+test('Studio API endpoints respond with valid blueprints, audits, and approvals', async () => {
+  const healthRes = await invokeApi('GET', '/health');
+  assert.equal(healthRes.status, 200);
+  assert.equal(healthRes.json.status, 'ok');
+  assert.equal(healthRes.json.allClientsConfigured, true);
 
-  try {
-    const healthRes = await fetch(`${baseUrl}/health`);
-    assert.equal(healthRes.status, 200);
-    const health = await healthRes.json();
-    assert.equal(health.status, 'ok');
-    assert.equal(health.allClientsConfigured, true);
+  const studioRes = await invokeApi('GET', '/api/studio/quay-container-exceptions?variant=C');
+  assert.equal(studioRes.status, 200);
+  assert.equal(studioRes.json.blueprint.caseId, 'quay-container-exceptions');
+  assert.equal(studioRes.json.artifacts.selectedVariant.variantKey, 'C');
+  assert.equal(studioRes.json.audit.overallPassed, true);
 
-    const studioRes = await fetch(`${baseUrl}/api/studio/quay-container-exceptions?variant=C`);
-    assert.equal(studioRes.status, 200);
-    const studioData = await studioRes.json();
-    assert.equal(studioData.blueprint.caseId, 'quay-container-exceptions');
-    assert.equal(studioData.artifacts.selectedVariant.variantKey, 'C');
-    assert.equal(studioData.audit.overallPassed, true);
-
-    const approveRes = await fetch(`${baseUrl}/api/approve`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        caseId: 'quay-container-exceptions',
-        reviewer: 'Philippe Godfroy',
-        rationale: 'Approved Variant C High-Density Matrix for terminal operations.',
-        variantKey: 'C',
-      }),
-    });
-    assert.equal(approveRes.status, 200);
-    const approveData = await approveRes.json();
-    assert.equal(approveData.status, 'APPROVED_FOR_PRODUCTION');
-  } finally {
-    await new Promise((resolve) => server.close(resolve));
-  }
+  const approveRes = await invokeApi('POST', '/api/approve', {
+    caseId: 'quay-container-exceptions',
+    reviewer: 'Philippe Godfroy',
+    rationale: 'Approved Variant C High-Density Matrix for terminal operations.',
+    variantKey: 'C',
+  });
+  assert.equal(approveRes.status, 200);
+  assert.equal(approveRes.json.status, 'APPROVED_FOR_PRODUCTION');
 });
