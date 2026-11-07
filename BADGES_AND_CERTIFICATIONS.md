@@ -97,6 +97,7 @@ Toegepast op drie concrete domeinen:
 ✅ **QuayReady:** Haven- en magazijn-uitzonderingsbeheer voor inkomende containers, douane-holds en zegelafwijkingen.
 ✅ **Auditly Studio:** Governance-dashboard voor UX-audits en design-system consistentie.
 
+🔗 Live Studio Workbench: https://enterprise-ai-product-design-studio.vercel.app
 🔗 GitHub Repository: https://github.com/phlppgdfry/enterprise-ai-product-design-studio
 
 #MagicPatterns #ModelContextProtocol #ProductManagement #BusinessAnalysis #FunctionalAnalysis #UXDesign #React #TypeScript #AIEngineering
