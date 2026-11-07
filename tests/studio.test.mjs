@@ -11,7 +11,7 @@ import {
   computeCompetenceRubric,
 } from '../src/core/studio-engine.mjs';
 import { inspectLocalMagicPatternsSetup } from '../src/core/mcp-api-bridge.mjs';
-import apiHandler from '../api/index.mjs';
+import apiHandler from '../api/index.js';
 
 function invokeApi(method, url, body = null) {
   return new Promise((resolve, reject) => {

@@ -16,11 +16,14 @@ import {
 } from '../src/core/mcp-api-bridge.mjs';
 
 function getEffectiveSetup() {
-  const local = inspectLocalMagicPatternsSetup();
-  if (local.allClientsConfigured) {
-    return local;
+  try {
+    const local = inspectLocalMagicPatternsSetup();
+    if (local && local.allClientsConfigured) {
+      return local;
+    }
+  } catch {
+    // Fallback for cloud serverless environment
   }
-  // When running in cloud serverless (Vercel), report the verified repository MCP & skill specification
   return {
     mcpEndpoint: MAGIC_PATTERNS_MCP_URL,
     restApiBase: MAGIC_PATTERNS_API_BASE,
@@ -47,9 +50,11 @@ function getEffectiveSetup() {
 
 export default async function handler(req, res) {
   try {
-    const url = new URL(req.url || '/', `http://${req.headers.host || '127.0.0.1'}`);
+    const rawUrl = req.url || '/';
+    const url = new URL(rawUrl, `http://${req.headers?.host || '127.0.0.1'}`);
+    const route = url.searchParams.get('__route') || url.pathname;
 
-    if (req.method === 'GET' && url.pathname === '/health') {
+    if (req.method === 'GET' && (route === '/health' || route === '/api/health')) {
       const setup = getEffectiveSetup();
       res.statusCode = 200;
       res.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -64,7 +69,7 @@ export default async function handler(req, res) {
       );
     }
 
-    if (req.method === 'GET' && url.pathname === '/api/cases') {
+    if (req.method === 'GET' && route === '/api/cases') {
       const setup = getEffectiveSetup();
       const rubric = computeCompetenceRubric();
       res.statusCode = 200;
@@ -88,8 +93,8 @@ export default async function handler(req, res) {
       );
     }
 
-    if (req.method === 'GET' && url.pathname.startsWith('/api/studio/')) {
-      const caseId = decodeURIComponent(url.pathname.slice('/api/studio/'.length));
+    if (req.method === 'GET' && route.startsWith('/api/studio/')) {
+      const caseId = decodeURIComponent(route.slice('/api/studio/'.length));
       const variantKey = url.searchParams.get('variant') || 'A';
       const blueprint = buildProductBlueprint(caseId);
       const artifacts = generateMagicPatternsArtifacts(caseId, { variantKey });
@@ -101,7 +106,7 @@ export default async function handler(req, res) {
       return res.end(JSON.stringify({ blueprint, audit, artifacts, fixtures }));
     }
 
-    if (req.method === 'POST' && url.pathname === '/api/approve') {
+    if (req.method === 'POST' && route === '/api/approve') {
       const body = typeof req.body === 'object' && req.body ? req.body : {};
       const caseInput = body.caseId || 'skillsbridge-review-console';
       const approval = approvePrototypeForProduction(caseInput, {
@@ -116,7 +121,7 @@ export default async function handler(req, res) {
 
     res.statusCode = 404;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
-    return res.end(JSON.stringify({ error: `Route not found: ${url.pathname}` }));
+    return res.end(JSON.stringify({ error: `Route not found: ${route}` }));
   } catch (err) {
     res.statusCode = 400;
     res.setHeader('Content-Type', 'application/json; charset=utf-8');
