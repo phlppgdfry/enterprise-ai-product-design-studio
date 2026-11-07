@@ -7,13 +7,13 @@ import {
   evaluateUxAndCompliance,
   approvePrototypeForProduction,
   computeCompetenceRubric,
-} from '../src/core/studio-engine.mjs';
+} from './core/studio-engine.mjs';
 import {
   MAGIC_PATTERNS_MCP_URL,
   MAGIC_PATTERNS_API_BASE,
   OFFICIAL_MAGIC_PATTERNS_SKILLS,
   inspectLocalMagicPatternsSetup,
-} from '../src/core/mcp-api-bridge.mjs';
+} from './core/mcp-api-bridge.mjs';
 
 function getEffectiveSetup() {
   try {
