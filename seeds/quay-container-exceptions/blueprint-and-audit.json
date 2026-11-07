@@ -254,7 +254,7 @@
   "audit": {
     "caseId": "quay-container-exceptions",
     "title": "QuayReady — Inbound Container & Berth Exception Triage Engine",
-    "evaluatedAt": "2026-11-07T03:55:08.391Z",
+    "evaluatedAt": "2026-11-07T05:55:30.811Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,

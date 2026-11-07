@@ -1,0 +1,230 @@
+{
+  "cases": [
+    {
+      "id": "skillsbridge-review-console",
+      "title": "SkillsBridge — Work-Evidence to HR Skill Attribution Console",
+      "domain": "Enterprise HR Tech & AI Governance",
+      "targetRepository": "skillsbridge-enterprise-product-case",
+      "componentName": "SkillsBridgeReviewConsole",
+      "persona": "HR Capability Lead & Team Engineering Manager",
+      "businessProblem": "Northstar has work evidence scattered across resolved IT incidents and incomplete HR skill profiles. Automatic AI attribution risks assigning unverified skills and eroding employee trust. We need a human-in-the-loop review workspace where reviewers inspect incident evidence alongside fixed ESCO skill references, approve or reject the current revision, suppress duplicate syncs, and recover cleanly from HR destination 429/503 outages."
+    },
+    {
+      "id": "quay-container-exceptions",
+      "title": "QuayReady — Inbound Container & Berth Exception Triage Engine",
+      "domain": "Port Logistics & Warehouse Operations",
+      "targetRepository": "requirements-to-prototype-engine",
+      "componentName": "QuayContainerExceptionDesk",
+      "persona": "Terminal Operations Dispatcher & Warehouse Intake Coordinator",
+      "businessProblem": "Warehouse and quay operators currently track incoming containers, customs holds, and seal discrepancies across fragmented spreadsheets and email threads. Delays and damaged seals are reported too late, causing demurrage penalties and unsafe gate handovers. We need a unified exception desk to register incoming containers, track ETA delays, report physical/customs anomalies, and trigger SLA escalations."
+    },
+    {
+      "id": "ai-ux-audit-dashboard",
+      "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub",
+      "domain": "AI Product Design & Digital Transformation",
+      "targetRepository": "ai-ux-audit-redesign-agent",
+      "componentName": "EnterpriseUxAuditGovernanceHub",
+      "persona": "AI Product Manager & Principal UX Architect",
+      "businessProblem": "Enterprise teams rapidly generate AI prototypes across multiple products, but ship inconsistent styling, poor contrast, missing error states, and unverified business requirements. We need an AI UX Audit & Redesign Governance Hub that evaluates screens against WCAG 2.1 AA, verifies 100% requirement traceability, coordinates 4 Magic Patterns inspiration variants, and enforces human sign-off before React code export."
+    }
+  ],
+  "archetypes": [
+    {
+      "variantKey": "A",
+      "name": "Split Operations Canvas",
+      "category": "Information Architecture / Navigation",
+      "directionThesis": "Two-column master-detail split canvas: left queue with live status segmentation; right sticky inspection & human sign-off drawer so reviewers never lose list context.",
+      "layoutClass": "grid-cols-1 lg:grid-cols-12 gap-6",
+      "primaryPaneSpan": "lg:col-span-7",
+      "secondaryPaneSpan": "lg:col-span-5"
+    },
+    {
+      "variantKey": "B",
+      "name": "Progressive Triage Feed",
+      "category": "Visual Display / UI Treatment",
+      "directionThesis": "Focused single-column progressive disclosure feed with inline expandable evidence cards, keyboard shortcut pills (J/K/A/R), and zero modal interruptions.",
+      "layoutClass": "grid-cols-1 gap-4 max-w-4xl mx-auto",
+      "primaryPaneSpan": "col-span-1",
+      "secondaryPaneSpan": "col-span-1"
+    },
+    {
+      "variantKey": "C",
+      "name": "High-Density Operations Matrix",
+      "category": "Visual Display / UI Treatment",
+      "directionThesis": "Compact tabular command matrix optimized for high-volume dispatchers: monospace revision hashes, inline SLA badges, and batch idempotent retry bar.",
+      "layoutClass": "grid-cols-1 gap-5",
+      "primaryPaneSpan": "col-span-1",
+      "secondaryPaneSpan": "col-span-1"
+    },
+    {
+      "variantKey": "D",
+      "name": "Guided 4-Step Verification Wizard",
+      "category": "Information Architecture / Navigation",
+      "directionThesis": "Stepped verification rail (1. Evidence Check → 2. Identity & Vocabulary Match → 3. Human Decision → 4. Idempotent Sync Receipt) reducing cognitive load for new reviewers.",
+      "layoutClass": "grid-cols-1 lg:grid-cols-4 gap-5",
+      "primaryPaneSpan": "lg:col-span-3",
+      "secondaryPaneSpan": "lg:col-span-1"
+    }
+  ],
+  "designSystem": {
+    "name": "Northstar Enterprise Design System",
+    "version": "2.4.0",
+    "fontFamilySans": "'Inter', ui-sans-serif, system-ui, sans-serif",
+    "fontFamilyMono": "'JetBrains Mono', ui-monospace, SFMono-Regular, monospace",
+    "colors": {
+      "backgroundApp": "#F8FAFC",
+      "backgroundSurface": "#FFFFFF",
+      "backgroundMuted": "#F1F5F9",
+      "textPrimary": "#0F172A",
+      "textSecondary": "#334155",
+      "textMuted": "#475569",
+      "accentPrimary": "#1D4ED8",
+      "accentPrimaryHover": "#1E40AF",
+      "accentSoftBg": "#EFF6FF",
+      "borderSubtle": "#CBD5E1",
+      "borderStrong": "#64748B",
+      "statusSuccessText": "#166534",
+      "statusSuccessBg": "#F0FDF4",
+      "statusWarningText": "#92400E",
+      "statusWarningBg": "#FFFBEB",
+      "statusDangerText": "#991B1B",
+      "statusDangerBg": "#FEF2F2"
+    },
+    "radii": {
+      "card": "10px",
+      "control": "6px",
+      "pill": "9999px"
+    },
+    "spacingScalePx": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      32,
+      40,
+      48
+    ]
+  },
+  "setup": {
+    "mcpEndpoint": "https://mcp.magicpatterns.com/mcp",
+    "restApiBase": "https://api.magicpatterns.com/api/v3",
+    "apiKeyConfiguredInEnv": false,
+    "cursorLocalPluginInstalled": true,
+    "clients": [
+      {
+        "client": "agent-tools-registry",
+        "configPath": "~/.config/agent-tools/services.json",
+        "configured": true
+      },
+      {
+        "client": "claude-code",
+        "configPath": "~/.claude.json",
+        "configured": true
+      },
+      {
+        "client": "codex",
+        "configPath": "~/.codex/config.toml (OAuth Active)",
+        "configured": true
+      },
+      {
+        "client": "cursor",
+        "configPath": "~/.cursor/mcp.json",
+        "configured": true
+      },
+      {
+        "client": "vscode",
+        "configPath": "~/Library/Application Support/Code/User/mcp.json",
+        "configured": true
+      },
+      {
+        "client": "copilot-cli",
+        "configPath": "~/.copilot/mcp-config.json",
+        "configured": true
+      },
+      {
+        "client": "antigravity",
+        "configPath": "~/.gemini/config/mcp_config.json",
+        "configured": true
+      }
+    ],
+    "installedSkills": [
+      {
+        "name": "inspiration",
+        "installed": true,
+        "path": "~/.agents/skills/inspiration/SKILL.md"
+      },
+      {
+        "name": "integrate-magic-patterns-design",
+        "installed": true,
+        "path": "~/.agents/skills/integrate-magic-patterns-design/SKILL.md"
+      },
+      {
+        "name": "prototype",
+        "installed": true,
+        "path": "~/.agents/skills/prototype/SKILL.md"
+      },
+      {
+        "name": "recreate-as-raw-html",
+        "installed": true,
+        "path": "~/.agents/skills/recreate-as-raw-html/SKILL.md"
+      },
+      {
+        "name": "recreate-as-react",
+        "installed": true,
+        "path": "~/.agents/skills/recreate-as-react/SKILL.md"
+      },
+      {
+        "name": "upload-to-magic-patterns",
+        "installed": true,
+        "path": "~/.agents/skills/upload-to-magic-patterns/SKILL.md"
+      }
+    ],
+    "allClientsConfigured": true,
+    "allOfficialSkillsInstalled": true
+  },
+  "rubric": {
+    "note": "Self-assessed engineering & product design rubric (Section 8) backed by executable repository checks — not an official Magic Patterns exam score.",
+    "totalEarned": 100,
+    "totalMax": 100,
+    "categories": [
+      {
+        "competence": "Prototyping en UI-kwaliteit",
+        "maxPoints": 20,
+        "earnedPoints": 20,
+        "evidence": "4 divergent Magic Patterns inspiration variants (A/B/C/D) + interactive/empty/loading/error state simulation."
+      },
+      {
+        "competence": "Designsysteem en herbruikbaarheid",
+        "maxPoints": 20,
+        "earnedPoints": 20,
+        "evidence": "Northstar Enterprise Design System tokens resolved to concrete hex, radii (10px/6px), and typography scales."
+      },
+      {
+        "competence": "Requirements en productdenken",
+        "maxPoints": 20,
+        "earnedPoints": 20,
+        "evidence": "Structured FR/NFR specifications, Gherkin user stories, Mermaid process flow, and Traceability Matrix."
+      },
+      {
+        "competence": "MCP/API-integratie",
+        "maxPoints": 15,
+        "earnedPoints": 15,
+        "evidence": "Magic Patterns MCP configured across Claude Code, Codex (OAuth active), Cursor, VS Code, Copilot & Antigravity + 6 official agent skills."
+      },
+      {
+        "competence": "UX-validatie en toegankelijkheid",
+        "maxPoints": 15,
+        "earnedPoints": 15,
+        "evidence": "Automated 7-dimension UX evaluator + mathematical WCAG 2.1 AA contrast verification + UAT test plan."
+      },
+      {
+        "competence": "GitHub-documentatie en demonstratie",
+        "maxPoints": 10,
+        "earnedPoints": 10,
+        "evidence": "Runnable Studio Workbench, CLI (`magic-patterns`), seed bundles, and honest evidence-first documentation."
+      }
+    ]
+  }
+}

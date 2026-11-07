@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "service": "enterprise-ai-product-design-studio",
+  "mcpEndpoint": "https://mcp.magicpatterns.com/mcp",
+  "allClientsConfigured": true,
+  "allOfficialSkillsInstalled": true
+}

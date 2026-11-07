@@ -254,7 +254,7 @@
   "audit": {
     "caseId": "ai-ux-audit-dashboard",
     "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub",
-    "evaluatedAt": "2026-11-07T03:55:08.394Z",
+    "evaluatedAt": "2026-11-07T05:55:30.817Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,

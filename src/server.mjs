@@ -127,11 +127,21 @@ export function createStudioServer() {
         return sendJson(res, 200, approval);
       }
 
-      // Serve static workbench
+      // Serve static workbench & pre-rendered JSON data
       if (req.method === 'GET' && (url.pathname === '/' || url.pathname === '/index.html')) {
         const html = fs.readFileSync(path.join(publicDir, 'index.html'), 'utf8');
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
         return res.end(html);
+      }
+
+      if (req.method === 'GET' && url.pathname.startsWith('/data/') && url.pathname.endsWith('.json')) {
+        const safeName = path.basename(url.pathname);
+        const filePath = path.join(publicDir, 'data', safeName);
+        if (fs.existsSync(filePath)) {
+          const jsonText = fs.readFileSync(filePath, 'utf8');
+          res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+          return res.end(jsonText);
+        }
       }
 
       sendJson(res, 404, { error: `Route not found: ${url.pathname}` });
