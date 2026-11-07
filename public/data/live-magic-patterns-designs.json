@@ -1,0 +1,41 @@
+[
+  {
+    "caseKey": "skillsbridge-review-console",
+    "title": "SkillsBridge Review Console — Enterprise AI Skills Attribution",
+    "editorId": "jhvkpwft3f3urpoatsfztf",
+    "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
+    "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+    "publishedAt": "2026-11-07T19:33:01.248Z",
+    "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+    "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
+    "status": "active",
+    "userAccount": "philgodf@gmail.com",
+    "magicPatternsHost": "magicpatterns.com"
+  },
+  {
+    "caseKey": "quay-container-exceptions",
+    "title": "Quay Container Exception Desk — Port Logistics BA/FA Workbench",
+    "editorId": "h7r6nj96m2lttknrvcayjy",
+    "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
+    "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+    "publishedAt": "2026-11-07T19:33:14.117Z",
+    "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+    "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
+    "status": "active",
+    "userAccount": "philgodf@gmail.com",
+    "magicPatternsHost": "magicpatterns.com"
+  },
+  {
+    "caseKey": "ai-ux-audit-dashboard",
+    "title": "Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA",
+    "editorId": "xrowqybya7cmog5nxpundx",
+    "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
+    "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+    "publishedAt": "2026-11-07T19:33:20.944Z",
+    "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+    "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
+    "status": "active",
+    "userAccount": "philgodf@gmail.com",
+    "magicPatternsHost": "magicpatterns.com"
+  }
+]

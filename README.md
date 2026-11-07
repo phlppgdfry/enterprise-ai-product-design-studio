@@ -64,11 +64,14 @@ magic-patterns approve skillsbridge-review-console \
 
 ## Ingebouwde Enterprise Cases (Direct Koppelbaar aan Bestaande Portfolio-Projecten)
 
-| Case ID | Project / Domein | Wat wordt bewezen | Gegenereerde Seed Map |
-|---|---|---|---|
-| `skillsbridge-review-console` | **SkillsBridge Enterprise Product Case** (*HR Tech & AI Governance*) | Menselijke review van IT-incidentbewijs tegen ESCO-vaardigheden, idempotente synchronisatie en HTTP 503 outage recovery. | [`seeds/skillsbridge-review-console/`](seeds/skillsbridge-review-console) |
-| `quay-container-exceptions` | **QuayReady Container Exception Engine** (*Port Logistics & Warehouse BA/FA*) | Inkomende containers registreren, ETA-vertragingen opvolgen, zegel-/douane-afwijkingen melden en gate-holds plaatsen. | [`seeds/quay-container-exceptions/`](seeds/quay-container-exceptions) |
-| `ai-ux-audit-dashboard` | **Auditly AI UX Audit & Redesign Hub** (*AI Product Management & UX Governance*) | Bestaande schermen analyseren op contrast, states en design tokens, en 4 Magic Patterns-varianten vergelijken. | [`seeds/ai-ux-audit-dashboard/`](seeds/ai-ux-audit-dashboard) |
+| Case ID | Project / Domein | Wat wordt bewezen | Gegenereerde Seed Map | Live Magic Patterns Editor |
+|---|---|---|---|---|
+| `skillsbridge-review-console` | **SkillsBridge Enterprise Product Case** (*HR Tech & AI Governance*) | Menselijke review van IT-incidentbewijs tegen ESCO-vaardigheden, idempotente synchronisatie en HTTP 503 outage recovery. | [`seeds/skillsbridge-review-console/`](seeds/skillsbridge-review-console) | [**Open Editor (jhvkpwft...)**](https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf) |
+| `quay-container-exceptions` | **QuayReady Container Exception Engine** (*Port Logistics & Warehouse BA/FA*) | Inkomende containers registreren, ETA-vertragingen opvolgen, zegel-/douane-afwijkingen melden en gate-holds plaatsen. | [`seeds/quay-container-exceptions/`](seeds/quay-container-exceptions) | [**Open Editor (h7r6nj96...)**](https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy) |
+| `ai-ux-audit-dashboard` | **Auditly AI UX Audit & Redesign Hub** (*AI Product Management & UX Governance*) | Bestaande schermen analyseren op contrast, states en design tokens, en 4 Magic Patterns-varianten vergelijken. | [`seeds/ai-ux-audit-dashboard/`](seeds/ai-ux-audit-dashboard) | [**Open Editor (xrowqyby...)**](https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx) |
+
+> [!NOTE]
+> **Live MCP-Uploads & Credit-Verbruik:** Alle drie de cases zijn rechtstreeks via de officiële Magic Patterns MCP Server (`https://mcp.magicpatterns.com/mcp`) geüpload, gecompileerd via `publish_artifact`, en AI-geëvolueerd met accountcredits via `send_prompt` op account `philgodf@gmail.com`. De live standaarden zijn ook direct te openen via de knoppen in de [Live Studio Workbench](https://enterprise-ai-product-design-studio.vercel.app).
 
 ---
 

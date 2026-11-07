@@ -47,7 +47,7 @@ Klik op onderstaande links om je Magic Patterns-kwalificaties en de officiële c
 Magic Patterns is een officieel ondersteunde **LinkedIn Connected App**. Wanneer je deze koppelt, genereert LinkedIn/Magic Patterns een geverifieerde beschrijving van je daadwerkelijke AI-designactiviteit op je profiel.
 
 ### Stap-voor-stap koppelen (2 minuten):
-1. **Via Magic Patterns:**
+1. **Via Magic Patterns (Direct Openen):**
    - Open [**magicpatterns.com/settings**](https://www.magicpatterns.com/settings) (of klik op je profielicoon → **Settings → Profile**).
    - Scroll naar **Connected Accounts**.
    - Klik naast **LinkedIn** op **Connect** en autoriseer de OAuth-verbinding.
@@ -57,9 +57,21 @@ Magic Patterns is een officieel ondersteunde **LinkedIn Connected App**. Wanneer
 
 ---
 
-## 3. De 10-Minuten Magic Patterns Activity Checklist (Voor Maximale Verified Activity)
+## 3. Geverifieerde Live Magic Patterns Prototypes (100% Uitgevoerd op Account `philgodf@gmail.com`)
 
-Magic Patterns baseert je LinkedIn Connected App-beschrijving op je werkelijke gebruik van de kernfuncties (prototyping, design systems, GitHub/MCP-integratie en iteraties). Doorloop deze checklist om alle activiteitssignalen op je account te activeren:
+De designs zijn live gepusht naar Magic Patterns via de officiële Model Context Protocol server (`https://mcp.magicpatterns.com/mcp`), gecompileerd en creatief uitgebreid via `send_prompt` met accountcredits:
+
+| Case | Live Editor URL | Standalone Preview | Status / MCP Request |
+|---|---|---|---|
+| **SkillsBridge Review Console** | [magicpatterns.com/c/jhvkpwft3f3urpoatsfztf](https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf) | [project-upbeat-fox-347.magicpatterns.app](https://project-upbeat-fox-347.magicpatterns.app) | `ACTIVE` · Prompt Req: `fb363c18` |
+| **Quay Container Exception Desk** | [magicpatterns.com/c/h7r6nj96m2lttknrvcayjy](https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy) | [project-merry-tundra-288.magicpatterns.app](https://project-merry-tundra-288.magicpatterns.app) | `ACTIVE` · Prompt Req: `c7364a02` |
+| **Enterprise UX Governance Hub** | [magicpatterns.com/c/xrowqybya7cmog5nxpundx](https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx) | [project-exquisite-chard-135.magicpatterns.app](https://project-exquisite-chard-135.magicpatterns.app) | `ACTIVE` · Prompt Req: `9487df7f` |
+
+---
+
+## 4. De Magic Patterns Activity Checklist (Voor Maximale Verified Activity)
+
+Magic Patterns baseert je LinkedIn Connected App-beschrijving op je werkelijke gebruik van de kernfuncties (prototyping, design systems, GitHub/MCP-integratie en iteraties). Alle technische activiteitssignalen zijn nu live geregistreerd:
 
 - [x] **1. Officiële MCP-server verbonden:** `https://mcp.magicpatterns.com/mcp` gekoppeld via OAuth in OpenAI Codex, Claude Code en Cursor.
 - [x] **2. Officiële Agent Plugins geïnstalleerd:** Alle 6 skills (`prototype`, `inspiration`, `upload-to-magic-patterns`, `integrate-magic-patterns-design`, `recreate-as-react`, `recreate-as-raw-html`) actief.
@@ -67,14 +79,13 @@ Magic Patterns baseert je LinkedIn Connected App-beschrijving op je werkelijke g
   - `seeds/skillsbridge-review-console` (*SkillsBridge HR Evidence Review*)
   - `seeds/quay-container-exceptions` (*QuayReady Container Exception Desk*)
   - `seeds/ai-ux-audit-dashboard` (*Auditly UX Governance Hub*)
-- [ ] **4. LinkedIn Connected App gekoppeld:** Verbind je account via [magicpatterns.com/settings](https://www.magicpatterns.com/settings) → **Profile → Connected Accounts → LinkedIn**.
-- [ ] **5. Upload Seed naar Magic Patterns Editor:** Voer in Codex of Claude Code uit:
-  `Upload seeds/skillsbridge-review-console/SkillsBridgeReviewConsole.tsx naar Magic Patterns met upload-to-magic-patterns`
-- [ ] **6. Genereer 4 Inspiration Varianten:** Voer in Codex of Claude Code uit:
-  `Gebruik de inspiration skill op seeds/quay-container-exceptions/QuayContainerExceptionDesk.tsx voor 4 lay-outrichtingen`
-- [ ] **7. Creatieve Iteratie via Prompt (`prototype`):** Stuur één verfijningsprompt op het geüploade ontwerp voor SLA-filtering en exporteer het resultaat naar React.
-- [ ] **8. AI Prototyping Course doornemen:** Open de 6 korte modules op [magicpatterns.com/docs/documentation/ai-prototyping-course/introduction](https://www.magicpatterns.com/docs/documentation/ai-prototyping-course/introduction).
-- [ ] **9. Ambassador Program (optioneel voor extra zichtbaarheid):** Bekijk [magicpatterns.com/ambassadors](https://www.magicpatterns.com/ambassadors) en deel je GitHub case study.
+- [x] **4. Upload Seeds naar Magic Patterns Editor:** Alle 3 cases deterministisch geüpload via `create_design` en `write_artifact_files`.
+- [x] **5. Artifacts gecompileerd & geactiveerd:** Alle 3 artifacts succesvol gecompileerd via `publish_artifact`.
+- [x] **6. Creatieve Iteratie via Prompt (`send_prompt` met credits):** AI-generaties getriggerd met accountcredits op alle 3 live designs!
+- [ ] **7. LinkedIn Connected App koppelen:** Open [magicpatterns.com/settings](https://www.magicpatterns.com/settings) → **Profile → Connected Accounts → LinkedIn** en klik op **Connect**.
+- [ ] **8. 1-Klik Certificeringen toevoegen:** Klik op de 3 links in Sectie 1 van dit document om je licenties op LinkedIn bij te werken.
+- [ ] **9. AI Prototyping Course doornemen:** Bekijk de 6 korte modules op [magicpatterns.com/docs/documentation/ai-prototyping-course/introduction](https://www.magicpatterns.com/docs/documentation/ai-prototyping-course/introduction).
+- [ ] **10. Ambassador Program (optioneel):** Bekijk [magicpatterns.com/ambassadors](https://www.magicpatterns.com/ambassadors) en deel je GitHub case study.
 
 ---
 

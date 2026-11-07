@@ -254,7 +254,7 @@
   "audit": {
     "caseId": "ai-ux-audit-dashboard",
     "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub",
-    "evaluatedAt": "2026-11-07T05:55:30.820Z",
+    "evaluatedAt": "2026-11-07T19:38:47.983Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,
@@ -398,6 +398,19 @@
       "primaryPaneSpan": "col-span-1",
       "secondaryPaneSpan": "col-span-1"
     },
+    "liveDesign": {
+      "caseId": "ai-ux-audit-dashboard",
+      "title": "Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA",
+      "editorId": "xrowqybya7cmog5nxpundx",
+      "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
+      "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
+      "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+      "publishedAt": "2026-11-07T19:33:20.944Z",
+      "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
+      "status": "ACTIVE_LIVE_PROTOTYPE",
+      "account": "philgodf@gmail.com",
+      "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+    },
     "seedFiles": {
       "App.tsx": "import React from 'react';\nimport { EnterpriseUxAuditGovernanceHub } from './EnterpriseUxAuditGovernanceHub';\n\nexport function App() {\n  return <EnterpriseUxAuditGovernanceHub />;\n}\n",
       "index.tsx": "import React from 'react';\nimport { createRoot } from 'react-dom/client';\nimport { App } from './App';\nimport './index.css';\n\nconst container = document.getElementById('root');\nif (container) {\n  const root = createRoot(container);\n  root.render(<App />);\n}\n",
@@ -440,18 +453,41 @@
     ],
     "mcpWorkflow": {
       "serverUrl": "https://mcp.magicpatterns.com/mcp",
+      "isLive": true,
+      "liveDesign": {
+        "caseId": "ai-ux-audit-dashboard",
+        "title": "Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA",
+        "editorId": "xrowqybya7cmog5nxpundx",
+        "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
+        "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
+        "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+        "publishedAt": "2026-11-07T19:33:20.944Z",
+        "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
+        "status": "ACTIVE_LIVE_PROTOTYPE",
+        "account": "philgodf@gmail.com",
+        "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+      },
       "seedAndPrototypeFlow": [
         {
           "step": 1,
           "tool": "create_design",
-          "arguments": {},
-          "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl."
+          "arguments": {
+            "name": "Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA",
+            "designSystem": "Shadcn"
+          },
+          "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl.",
+          "liveResult": {
+            "editorId": "xrowqybya7cmog5nxpundx",
+            "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
+            "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
+            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f"
+          }
         },
         {
           "step": 2,
           "tool": "get_design_status",
           "arguments": {
-            "editorId": "<editorId-from-step-1>"
+            "editorId": "xrowqybya7cmog5nxpundx"
           },
           "purpose": "Verify active artifactId and confirm isGenerating is false."
         },
@@ -459,7 +495,7 @@
           "step": 3,
           "tool": "write_artifact_files",
           "arguments": {
-            "artifactId": "<artifactId-from-step-2>",
+            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
             "files": [
               "App.tsx",
               "index.tsx",
@@ -476,8 +512,9 @@
           "step": 4,
           "tool": "publish_artifact",
           "arguments": {
-            "artifactId": "<artifactId-from-step-2>",
-            "editorId": "<editorId-from-step-1>"
+            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+            "editorId": "xrowqybya7cmog5nxpundx",
+            "description": "Initial enterprise seed: Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub with multi-factor attribution, telemetry audit, and approval gating"
           },
           "purpose": "Compile and activate the seeded artifact in Magic Patterns before prompting."
         },
@@ -485,10 +522,11 @@
           "step": 5,
           "tool": "send_prompt",
           "arguments": {
-            "editorId": "<editorId-from-step-1>",
-            "prompt": "Evolve EnterpriseUxAuditGovernanceHub using Progressive Triage Feed (Focused single-column progressive disclosure feed with inline expandable evidence cards, keyboard shortcut pills (J/K/A/R), and zero modal interruptions.). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states."
+            "editorId": "xrowqybya7cmog5nxpundx",
+            "prompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
           },
-          "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed."
+          "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed.",
+          "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507"
         }
       ],
       "inspirationFlow": {

@@ -269,7 +269,7 @@
   "audit": {
     "caseId": "skillsbridge-review-console",
     "title": "SkillsBridge — Work-Evidence to HR Skill Attribution Console",
-    "evaluatedAt": "2026-11-07T05:55:30.806Z",
+    "evaluatedAt": "2026-11-07T19:38:47.946Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,
@@ -419,6 +419,19 @@
       "primaryPaneSpan": "col-span-1",
       "secondaryPaneSpan": "col-span-1"
     },
+    "liveDesign": {
+      "caseId": "skillsbridge-review-console",
+      "title": "SkillsBridge Review Console — Enterprise AI Skills Attribution",
+      "editorId": "jhvkpwft3f3urpoatsfztf",
+      "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
+      "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
+      "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+      "publishedAt": "2026-11-07T19:33:01.248Z",
+      "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
+      "status": "ACTIVE_LIVE_PROTOTYPE",
+      "account": "philgodf@gmail.com",
+      "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+    },
     "seedFiles": {
       "App.tsx": "import React from 'react';\nimport { SkillsBridgeReviewConsole } from './SkillsBridgeReviewConsole';\n\nexport function App() {\n  return <SkillsBridgeReviewConsole />;\n}\n",
       "index.tsx": "import React from 'react';\nimport { createRoot } from 'react-dom/client';\nimport { App } from './App';\nimport './index.css';\n\nconst container = document.getElementById('root');\nif (container) {\n  const root = createRoot(container);\n  root.render(<App />);\n}\n",
@@ -461,18 +474,41 @@
     ],
     "mcpWorkflow": {
       "serverUrl": "https://mcp.magicpatterns.com/mcp",
+      "isLive": true,
+      "liveDesign": {
+        "caseId": "skillsbridge-review-console",
+        "title": "SkillsBridge Review Console — Enterprise AI Skills Attribution",
+        "editorId": "jhvkpwft3f3urpoatsfztf",
+        "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
+        "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
+        "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+        "publishedAt": "2026-11-07T19:33:01.248Z",
+        "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
+        "status": "ACTIVE_LIVE_PROTOTYPE",
+        "account": "philgodf@gmail.com",
+        "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+      },
       "seedAndPrototypeFlow": [
         {
           "step": 1,
           "tool": "create_design",
-          "arguments": {},
-          "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl."
+          "arguments": {
+            "name": "SkillsBridge Review Console — Enterprise AI Skills Attribution",
+            "designSystem": "Shadcn"
+          },
+          "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl.",
+          "liveResult": {
+            "editorId": "jhvkpwft3f3urpoatsfztf",
+            "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
+            "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
+            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52"
+          }
         },
         {
           "step": 2,
           "tool": "get_design_status",
           "arguments": {
-            "editorId": "<editorId-from-step-1>"
+            "editorId": "jhvkpwft3f3urpoatsfztf"
           },
           "purpose": "Verify active artifactId and confirm isGenerating is false."
         },
@@ -480,7 +516,7 @@
           "step": 3,
           "tool": "write_artifact_files",
           "arguments": {
-            "artifactId": "<artifactId-from-step-2>",
+            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
             "files": [
               "App.tsx",
               "index.tsx",
@@ -497,8 +533,9 @@
           "step": 4,
           "tool": "publish_artifact",
           "arguments": {
-            "artifactId": "<artifactId-from-step-2>",
-            "editorId": "<editorId-from-step-1>"
+            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+            "editorId": "jhvkpwft3f3urpoatsfztf",
+            "description": "Initial enterprise seed: SkillsBridge — Work-Evidence to HR Skill Attribution Console with multi-factor attribution, telemetry audit, and approval gating"
           },
           "purpose": "Compile and activate the seeded artifact in Magic Patterns before prompting."
         },
@@ -506,10 +543,11 @@
           "step": 5,
           "tool": "send_prompt",
           "arguments": {
-            "editorId": "<editorId-from-step-1>",
-            "prompt": "Evolve SkillsBridgeReviewConsole using Progressive Triage Feed (Focused single-column progressive disclosure feed with inline expandable evidence cards, keyboard shortcut pills (J/K/A/R), and zero modal interruptions.). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states."
+            "editorId": "jhvkpwft3f3urpoatsfztf",
+            "prompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
           },
-          "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed."
+          "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed.",
+          "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36"
         }
       ],
       "inspirationFlow": {

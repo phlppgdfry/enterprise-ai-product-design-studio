@@ -41,6 +41,51 @@ export const DESIGN_SYSTEM_TOKENS = Object.freeze({
 });
 
 /**
+ * Verified Live Magic Patterns Designs pushed via official MCP server (`https://mcp.magicpatterns.com/mcp`).
+ */
+export const LIVE_MAGIC_PATTERNS_DESIGNS = Object.freeze({
+  'skillsbridge-review-console': Object.freeze({
+    caseId: 'skillsbridge-review-console',
+    title: 'SkillsBridge Review Console — Enterprise AI Skills Attribution',
+    editorId: 'jhvkpwft3f3urpoatsfztf',
+    editorUrl: 'https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf',
+    previewUrl: 'https://project-upbeat-fox-347.magicpatterns.app',
+    artifactId: '3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52',
+    publishedAt: '2026-11-07T19:33:01.248Z',
+    promptRequestId: 'fb363c18-2522-43c2-8da2-c1e3229a3e36',
+    status: 'ACTIVE_LIVE_PROTOTYPE',
+    account: 'philgodf@gmail.com',
+    aiPrompt: 'Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.',
+  }),
+  'quay-container-exceptions': Object.freeze({
+    caseId: 'quay-container-exceptions',
+    title: 'Quay Container Exception Desk — Port Logistics BA/FA Workbench',
+    editorId: 'h7r6nj96m2lttknrvcayjy',
+    editorUrl: 'https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy',
+    previewUrl: 'https://project-merry-tundra-288.magicpatterns.app',
+    artifactId: 'edc2eae8-9006-47a8-ac3b-dd85b5ed0f41',
+    publishedAt: '2026-11-07T19:33:14.117Z',
+    promptRequestId: 'c7364a02-8040-4e2c-9c19-3516bb461460',
+    status: 'ACTIVE_LIVE_PROTOTYPE',
+    account: 'philgodf@gmail.com',
+    aiPrompt: 'Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.',
+  }),
+  'ai-ux-audit-dashboard': Object.freeze({
+    caseId: 'ai-ux-audit-dashboard',
+    title: 'Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA',
+    editorId: 'xrowqybya7cmog5nxpundx',
+    editorUrl: 'https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx',
+    previewUrl: 'https://project-exquisite-chard-135.magicpatterns.app',
+    artifactId: '918b2ee5-4cb8-4463-ab58-4a25a83d7a6f',
+    publishedAt: '2026-11-07T19:33:20.944Z',
+    promptRequestId: '9487df7f-77fc-4dce-bd4a-abbcb92a5507',
+    status: 'ACTIVE_LIVE_PROTOTYPE',
+    account: 'philgodf@gmail.com',
+    aiPrompt: 'Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.',
+  }),
+});
+
+/**
  * Compute WCAG 2.1 relative luminance and contrast ratio for two hex colors.
  */
 export function hexToRgb(hex) {
@@ -1193,27 +1238,41 @@ if (container) {
     'package.json': packageJsonSeed,
   };
 
+  const live = LIVE_MAGIC_PATTERNS_DESIGNS[productCase.id] || null;
+
   // Exact MCP tool sequence matching Magic Patterns official MCP server (`https://mcp.magicpatterns.com/mcp`)
   const mcpWorkflow = {
     serverUrl: 'https://mcp.magicpatterns.com/mcp',
+    isLive: Boolean(live),
+    liveDesign: live,
     seedAndPrototypeFlow: [
       {
         step: 1,
         tool: 'create_design',
-        arguments: {},
+        arguments: live
+          ? { name: live.title, designSystem: 'Shadcn' }
+          : { name: productCase.title, designSystem: 'Shadcn' },
         purpose: 'Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl.',
+        liveResult: live
+          ? {
+              editorId: live.editorId,
+              editorUrl: live.editorUrl,
+              previewUrl: live.previewUrl,
+              artifactId: live.artifactId,
+            }
+          : null,
       },
       {
         step: 2,
         tool: 'get_design_status',
-        arguments: { editorId: '<editorId-from-step-1>' },
+        arguments: { editorId: live ? live.editorId : '<editorId-from-step-1>' },
         purpose: 'Verify active artifactId and confirm isGenerating is false.',
       },
       {
         step: 3,
         tool: 'write_artifact_files',
         arguments: {
-          artifactId: '<artifactId-from-step-2>',
+          artifactId: live ? live.artifactId : '<artifactId-from-step-2>',
           files: Object.keys(filesMap),
         },
         purpose: `Upload deterministic React + TypeScript + Tailwind seed for ${productCase.componentName}.`,
@@ -1222,8 +1281,9 @@ if (container) {
         step: 4,
         tool: 'publish_artifact',
         arguments: {
-          artifactId: '<artifactId-from-step-2>',
-          editorId: '<editorId-from-step-1>',
+          artifactId: live ? live.artifactId : '<artifactId-from-step-2>',
+          editorId: live ? live.editorId : '<editorId-from-step-1>',
+          description: `Initial enterprise seed: ${productCase.title} with multi-factor attribution, telemetry audit, and approval gating`,
         },
         purpose: 'Compile and activate the seeded artifact in Magic Patterns before prompting.',
       },
@@ -1231,10 +1291,11 @@ if (container) {
         step: 5,
         tool: 'send_prompt',
         arguments: {
-          editorId: '<editorId-from-step-1>',
-          prompt: `Evolve ${productCase.componentName} using ${archetype.name} (${archetype.directionThesis}). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states.`,
+          editorId: live ? live.editorId : '<editorId-from-step-1>',
+          prompt: live ? live.aiPrompt : `Evolve ${productCase.componentName} using ${archetype.name} (${archetype.directionThesis}). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states.`,
         },
         purpose: 'Trigger creative AI iteration in Magic Patterns on top of the faithful seed.',
+        promptRequestId: live?.promptRequestId || null,
       },
     ],
     inspirationFlow: {
@@ -1270,6 +1331,7 @@ if (container) {
     caseId: productCase.id,
     componentName: productCase.componentName,
     selectedVariant: archetype,
+    liveDesign: live,
     seedFiles: filesMap,
     baselineHtml,
     inspirationVariants,

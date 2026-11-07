@@ -1,0 +1,13 @@
+{
+  "caseKey": "quay-container-exceptions",
+  "title": "Quay Container Exception Desk — Port Logistics BA/FA Workbench",
+  "editorId": "h7r6nj96m2lttknrvcayjy",
+  "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
+  "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+  "publishedAt": "2026-11-07T19:33:14.117Z",
+  "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+  "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
+  "status": "active",
+  "userAccount": "philgodf@gmail.com",
+  "magicPatternsHost": "magicpatterns.com"
+}

@@ -1,0 +1,13 @@
+{
+  "caseKey": "ai-ux-audit-dashboard",
+  "title": "Enterprise UX Audit Governance Hub — AI Product Management & WCAG 2.1 AA",
+  "editorId": "xrowqybya7cmog5nxpundx",
+  "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
+  "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+  "publishedAt": "2026-11-07T19:33:20.944Z",
+  "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+  "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
+  "status": "active",
+  "userAccount": "philgodf@gmail.com",
+  "magicPatternsHost": "magicpatterns.com"
+}

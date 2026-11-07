@@ -1,17 +1,40 @@
 {
   "serverUrl": "https://mcp.magicpatterns.com/mcp",
+  "isLive": true,
+  "liveDesign": {
+    "caseId": "quay-container-exceptions",
+    "title": "Quay Container Exception Desk — Port Logistics BA/FA Workbench",
+    "editorId": "h7r6nj96m2lttknrvcayjy",
+    "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
+    "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
+    "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+    "publishedAt": "2026-11-07T19:33:14.117Z",
+    "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
+    "status": "ACTIVE_LIVE_PROTOTYPE",
+    "account": "philgodf@gmail.com",
+    "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
+  },
   "seedAndPrototypeFlow": [
     {
       "step": 1,
       "tool": "create_design",
-      "arguments": {},
-      "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl."
+      "arguments": {
+        "name": "Quay Container Exception Desk — Port Logistics BA/FA Workbench",
+        "designSystem": "Shadcn"
+      },
+      "purpose": "Create a blank Magic Patterns design scaffold returning editorId, artifactId, and editorUrl.",
+      "liveResult": {
+        "editorId": "h7r6nj96m2lttknrvcayjy",
+        "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
+        "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
+        "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41"
+      }
     },
     {
       "step": 2,
       "tool": "get_design_status",
       "arguments": {
-        "editorId": "<editorId-from-step-1>"
+        "editorId": "h7r6nj96m2lttknrvcayjy"
       },
       "purpose": "Verify active artifactId and confirm isGenerating is false."
     },
@@ -19,7 +42,7 @@
       "step": 3,
       "tool": "write_artifact_files",
       "arguments": {
-        "artifactId": "<artifactId-from-step-2>",
+        "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
         "files": [
           "App.tsx",
           "index.tsx",
@@ -36,8 +59,9 @@
       "step": 4,
       "tool": "publish_artifact",
       "arguments": {
-        "artifactId": "<artifactId-from-step-2>",
-        "editorId": "<editorId-from-step-1>"
+        "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+        "editorId": "h7r6nj96m2lttknrvcayjy",
+        "description": "Initial enterprise seed: QuayReady — Inbound Container & Berth Exception Triage Engine with multi-factor attribution, telemetry audit, and approval gating"
       },
       "purpose": "Compile and activate the seeded artifact in Magic Patterns before prompting."
     },
@@ -45,10 +69,11 @@
       "step": 5,
       "tool": "send_prompt",
       "arguments": {
-        "editorId": "<editorId-from-step-1>",
-        "prompt": "Evolve QuayContainerExceptionDesk using Split Operations Canvas (Two-column master-detail split canvas: left queue with live status segmentation; right sticky inspection & human sign-off drawer so reviewers never lose list context.). Preserve all Northstar design tokens, WCAG AA contrast, and explicit interactive/empty/loading/error states."
+        "editorId": "h7r6nj96m2lttknrvcayjy",
+        "prompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
       },
-      "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed."
+      "purpose": "Trigger creative AI iteration in Magic Patterns on top of the faithful seed.",
+      "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460"
     }
   ],
   "inspirationFlow": {

@@ -15,6 +15,7 @@
     "test": "node --test tests/*.test.mjs",
     "audit": "node bin/magic-patterns-studio.mjs audit skillsbridge-review-console",
     "generate:seeds": "node scripts/generate-seeds.mjs",
+    "push:live": "node scripts/push-all-to-magic-patterns.mjs",
     "verify": "node scripts/verify-all.mjs"
   },
   "engines": {

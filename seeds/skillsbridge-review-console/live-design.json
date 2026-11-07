@@ -1,0 +1,13 @@
+{
+  "caseKey": "skillsbridge-review-console",
+  "title": "SkillsBridge Review Console — Enterprise AI Skills Attribution",
+  "editorId": "jhvkpwft3f3urpoatsfztf",
+  "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
+  "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+  "publishedAt": "2026-11-07T19:33:01.248Z",
+  "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+  "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
+  "status": "active",
+  "userAccount": "philgodf@gmail.com",
+  "magicPatternsHost": "magicpatterns.com"
+}
