@@ -71,7 +71,23 @@ magic-patterns approve skillsbridge-review-console \
 | `ai-ux-audit-dashboard` | **Auditly AI UX Audit & Redesign Hub** (*AI Product Management & UX Governance*) | Bestaande schermen analyseren op contrast, states en design tokens, en 4 Magic Patterns-varianten vergelijken. | [`seeds/ai-ux-audit-dashboard/`](seeds/ai-ux-audit-dashboard) | [**Open Editor (xrowqyby...)**](https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx) |
 
 > [!NOTE]
-> **Live MCP-Uploads & Credit-Verbruik:** Alle drie de cases zijn rechtstreeks via de officiële Magic Patterns MCP Server (`https://mcp.magicpatterns.com/mcp`) geüpload, gecompileerd via `publish_artifact`, en AI-geëvolueerd met accountcredits via `send_prompt` op account `philgodf@gmail.com`. De live standaarden zijn ook direct te openen via de knoppen in de [Live Studio Workbench](https://enterprise-ai-product-design-studio.vercel.app).
+> **Live MCP-Uploads & Credit-Verbruik:** Alle drie de cases zijn rechtstreeks via de officiële Magic Patterns MCP Server (`https://mcp.magicpatterns.com/mcp`) geüpload, gecompileerd via `publish_artifact`, en AI-geëvolueerd met de 100 accountcredits via `send_prompt` op account `philgodf@gmail.com`. De live standaarden zijn ook direct te openen via de knoppen in de [Live Studio Workbench](https://enterprise-ai-product-design-studio.vercel.app).
+
+---
+
+## 🌟 4-Pijler Magic Patterns Top User Suite (LinkedIn Connected App Integratie)
+
+Om maximale platformdiepte en verified activity aan te tonen via de officiële [**LinkedIn Connected App**](https://www.magicpatterns.com/settings) zijn alle vier de diepgaande werkvlakken van Magic Patterns doorlopen en zijn de 100 platform-credits benut voor deep multi-file AI prompt-evoluties (`send_prompt`):
+
+| Pijler | Platform Werkvlak | Directe Magic Patterns URL | Gegenereerde Assets & Activiteit |
+|---|---|---|---|
+| **1. Standalone Editor Designs** | Multi-File React Codebases | • [SkillsBridge Console](https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf)<br>• [Quay Exception Desk](https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy)<br>• [UX Governance Hub](https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx) | **34+ AI-bestanden gegenereerd** met de 100 accountcredits via `send_prompt` (o.a. `attributionDiff.ts`, `CraneConflictSolver.tsx`, `ContrastSimulationMatrix.tsx`, `TicketExporter.tsx`, WCAG tokens). |
+| **2. Magic OS Infinite Canvas** | Multi-Screen Canvas | [Magic OS 54jK52DBd9Jwu9PD8Yyf25](https://www.magicpatterns.com/os/54jK52DBd9Jwu9PD8Yyf25) | 5 designs gebouwd op één oneindig canvas (`create_os_file`), type-checked met `verify` (0 fouten), gereleased via `finish_working`. |
+| **3. Custom Design System** | Enterprise Design System Authoring | [Northstar DS v0.1](https://www.magicpatterns.com/design-system/ds-f1811c95-21db-48b8-bf5d-733eaf6fd5d6) | Aangemaakt als `ds-f1811c95-21db-48b8-bf5d-733eaf6fd5d6`, tokens en stylingregels vastgelegd en versie 0.1 officieel gepubliceerd. |
+| **4. Inspiration Document** | Multi-Variant Ideation | [Enterprise Inspiration Doc](https://www.magicpatterns.com/inspiration/96bf9707-28c8-47e3-b537-ceeb88b820e0) | Document `96bf9707-28c8-47e3-b537-ceeb88b820e0` met 4 divergente enterprise UI-archetypen gepubliceerd. |
+
+> [!TIP]
+> **Koppelen met LinkedIn:** Open [magicpatterns.com/settings](https://www.magicpatterns.com/settings) → **Profile → Connected Accounts → LinkedIn** en klik op **Connect**. De Connected App leest bovenstaande platformactiviteit direct uit om geverifieerde AI-designvaardigheden op je LinkedIn-profiel te plaatsen. Zie [BADGES_AND_CERTIFICATIONS.md](BADGES_AND_CERTIFICATIONS.md) voor de directe 1-klik licentielinks en kant-en-klare LinkedIn showcasepost.
 
 ---
 
