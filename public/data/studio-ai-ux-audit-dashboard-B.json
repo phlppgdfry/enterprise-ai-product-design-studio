@@ -254,7 +254,7 @@
   "audit": {
     "caseId": "ai-ux-audit-dashboard",
     "title": "Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub",
-    "evaluatedAt": "2026-11-07T19:38:47.983Z",
+    "evaluatedAt": "2026-11-08T00:43:40.465Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,
@@ -404,12 +404,28 @@
       "editorId": "xrowqybya7cmog5nxpundx",
       "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
       "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
-      "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+      "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
       "publishedAt": "2026-11-07T19:33:20.944Z",
       "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+      "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+      "aiGeneratedFiles": [
+        "types/accessibility.ts",
+        "data/visionSimulations.ts",
+        "data/contrastPairs.ts",
+        "data/accessibilityCheckpoints.ts",
+        "utils/contrast.ts",
+        "utils/designDebt.ts",
+        "utils/ticketPayload.ts",
+        "components/VisionSimulationFilters.tsx",
+        "components/VisionSimulationToggle.tsx",
+        "components/WorkspaceTabs.tsx",
+        "components/ContrastSimulationMatrix.tsx",
+        "components/DesignDebtCalculator.tsx",
+        "components/TicketExporter/useTicketExporter.ts",
+        "components/TicketExporter/TicketExporter.tsx"
+      ]
     },
     "seedFiles": {
       "App.tsx": "import React from 'react';\nimport { EnterpriseUxAuditGovernanceHub } from './EnterpriseUxAuditGovernanceHub';\n\nexport function App() {\n  return <EnterpriseUxAuditGovernanceHub />;\n}\n",
@@ -460,12 +476,28 @@
         "editorId": "xrowqybya7cmog5nxpundx",
         "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
         "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
-        "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+        "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
         "publishedAt": "2026-11-07T19:33:20.944Z",
         "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+        "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+        "aiGeneratedFiles": [
+          "types/accessibility.ts",
+          "data/visionSimulations.ts",
+          "data/contrastPairs.ts",
+          "data/accessibilityCheckpoints.ts",
+          "utils/contrast.ts",
+          "utils/designDebt.ts",
+          "utils/ticketPayload.ts",
+          "components/VisionSimulationFilters.tsx",
+          "components/VisionSimulationToggle.tsx",
+          "components/WorkspaceTabs.tsx",
+          "components/ContrastSimulationMatrix.tsx",
+          "components/DesignDebtCalculator.tsx",
+          "components/TicketExporter/useTicketExporter.ts",
+          "components/TicketExporter/TicketExporter.tsx"
+        ]
       },
       "seedAndPrototypeFlow": [
         {
@@ -480,7 +512,7 @@
             "editorId": "xrowqybya7cmog5nxpundx",
             "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
             "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
-            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f"
+            "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593"
           }
         },
         {
@@ -495,7 +527,7 @@
           "step": 3,
           "tool": "write_artifact_files",
           "arguments": {
-            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+            "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
             "files": [
               "App.tsx",
               "index.tsx",
@@ -512,7 +544,7 @@
           "step": 4,
           "tool": "publish_artifact",
           "arguments": {
-            "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+            "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
             "editorId": "xrowqybya7cmog5nxpundx",
             "description": "Initial enterprise seed: Auditly Studio — Enterprise AI UX Audit & Design System Governance Hub with multi-factor attribution, telemetry audit, and approval gating"
           },

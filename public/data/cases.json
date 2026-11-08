@@ -14,12 +14,18 @@
         "editorId": "jhvkpwft3f3urpoatsfztf",
         "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
         "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
-        "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+        "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
         "publishedAt": "2026-11-07T19:33:01.248Z",
         "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+        "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+        "aiGeneratedFiles": [
+          "utils/attributionDiff.ts",
+          "components/ConfidenceCalibration.tsx",
+          "components/AttributionDiffModal.tsx",
+          "components/WcagComplianceBadge.tsx"
+        ]
       }
     },
     {
@@ -36,12 +42,32 @@
         "editorId": "h7r6nj96m2lttknrvcayjy",
         "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
         "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
-        "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+        "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
         "publishedAt": "2026-11-07T19:33:14.117Z",
         "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
+        "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+        "aiGeneratedFiles": [
+          "types/port.ts",
+          "data/vessels.ts",
+          "data/customsHolds.ts",
+          "data/remediationActions.ts",
+          "data/cranes.ts",
+          "utils/time.ts",
+          "hooks/useNow.ts",
+          "utils/craneSolver.ts",
+          "hooks/useCraneSolver.ts",
+          "hooks/useBatchRemediation.ts",
+          "components/berthing/BerthingCountdownStrip.tsx",
+          "components/customs/BatchConfigureStep.tsx",
+          "components/customs/BatchProgressStep.tsx",
+          "components/customs/CustomsBatchRemediationModal.tsx",
+          "components/crane/CraneTimeline.tsx",
+          "components/crane/CraneConflictList.tsx",
+          "components/crane/CraneAuditLog.tsx",
+          "components/crane/CraneConflictSolver.tsx"
+        ]
       }
     },
     {
@@ -58,12 +84,28 @@
         "editorId": "xrowqybya7cmog5nxpundx",
         "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
         "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
-        "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+        "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
         "publishedAt": "2026-11-07T19:33:20.944Z",
         "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+        "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+        "aiGeneratedFiles": [
+          "types/accessibility.ts",
+          "data/visionSimulations.ts",
+          "data/contrastPairs.ts",
+          "data/accessibilityCheckpoints.ts",
+          "utils/contrast.ts",
+          "utils/designDebt.ts",
+          "utils/ticketPayload.ts",
+          "components/VisionSimulationFilters.tsx",
+          "components/VisionSimulationToggle.tsx",
+          "components/WorkspaceTabs.tsx",
+          "components/ContrastSimulationMatrix.tsx",
+          "components/DesignDebtCalculator.tsx",
+          "components/TicketExporter/useTicketExporter.ts",
+          "components/TicketExporter/TicketExporter.tsx"
+        ]
       }
     }
   ],
@@ -74,12 +116,18 @@
       "editorId": "jhvkpwft3f3urpoatsfztf",
       "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
       "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
-      "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+      "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
       "publishedAt": "2026-11-07T19:33:01.248Z",
       "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+      "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+      "aiGeneratedFiles": [
+        "utils/attributionDiff.ts",
+        "components/ConfidenceCalibration.tsx",
+        "components/AttributionDiffModal.tsx",
+        "components/WcagComplianceBadge.tsx"
+      ]
     },
     "quay-container-exceptions": {
       "caseId": "quay-container-exceptions",
@@ -87,12 +135,32 @@
       "editorId": "h7r6nj96m2lttknrvcayjy",
       "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
       "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
-      "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+      "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
       "publishedAt": "2026-11-07T19:33:14.117Z",
       "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
+      "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+      "aiGeneratedFiles": [
+        "types/port.ts",
+        "data/vessels.ts",
+        "data/customsHolds.ts",
+        "data/remediationActions.ts",
+        "data/cranes.ts",
+        "utils/time.ts",
+        "hooks/useNow.ts",
+        "utils/craneSolver.ts",
+        "hooks/useCraneSolver.ts",
+        "hooks/useBatchRemediation.ts",
+        "components/berthing/BerthingCountdownStrip.tsx",
+        "components/customs/BatchConfigureStep.tsx",
+        "components/customs/BatchProgressStep.tsx",
+        "components/customs/CustomsBatchRemediationModal.tsx",
+        "components/crane/CraneTimeline.tsx",
+        "components/crane/CraneConflictList.tsx",
+        "components/crane/CraneAuditLog.tsx",
+        "components/crane/CraneConflictSolver.tsx"
+      ]
     },
     "ai-ux-audit-dashboard": {
       "caseId": "ai-ux-audit-dashboard",
@@ -100,12 +168,52 @@
       "editorId": "xrowqybya7cmog5nxpundx",
       "editorUrl": "https://www.magicpatterns.com/c/xrowqybya7cmog5nxpundx",
       "previewUrl": "https://project-exquisite-chard-135.magicpatterns.app",
-      "artifactId": "918b2ee5-4cb8-4463-ab58-4a25a83d7a6f",
+      "artifactId": "f05cb08b-b1fd-429b-b00e-02eff70bc593",
       "publishedAt": "2026-11-07T19:33:20.944Z",
       "promptRequestId": "9487df7f-77fc-4dce-bd4a-abbcb92a5507",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints."
+      "aiPrompt": "Enhance this UX Audit Governance Hub: add an automated design debt cost calculator, a 7-dimension WCAG 2.1 AA contrast simulation toggle, and an automated Jira/Linear ticket exporter for failed accessibility checkpoints.",
+      "aiGeneratedFiles": [
+        "types/accessibility.ts",
+        "data/visionSimulations.ts",
+        "data/contrastPairs.ts",
+        "data/accessibilityCheckpoints.ts",
+        "utils/contrast.ts",
+        "utils/designDebt.ts",
+        "utils/ticketPayload.ts",
+        "components/VisionSimulationFilters.tsx",
+        "components/VisionSimulationToggle.tsx",
+        "components/WorkspaceTabs.tsx",
+        "components/ContrastSimulationMatrix.tsx",
+        "components/DesignDebtCalculator.tsx",
+        "components/TicketExporter/useTicketExporter.ts",
+        "components/TicketExporter/TicketExporter.tsx"
+      ]
+    }
+  },
+  "topUserSuite": {
+    "account": "philgodf@gmail.com",
+    "creditsStatus": "100% EXHAUSTED ON AI ITERATION & COMPONENT GENERATION",
+    "platforms": {
+      "inspirationDocument": {
+        "id": "96bf9707-28c8-47e3-b537-ceeb88b820e0",
+        "url": "https://www.magicpatterns.com/inspiration/96bf9707-28c8-47e3-b537-ceeb88b820e0",
+        "title": "Enterprise AI Design Architecture — 4 Structural Directions",
+        "status": "ACTIVE_PUBLISHED"
+      },
+      "customDesignSystem": {
+        "id": "ds-f1811c95-21db-48b8-bf5d-733eaf6fd5d6",
+        "url": "https://www.magicpatterns.com/design-system/ds-f1811c95-21db-48b8-bf5d-733eaf6fd5d6",
+        "name": "Northstar Enterprise Design System",
+        "status": "PUBLISHED_V0.1"
+      },
+      "magicOsCanvas": {
+        "osId": "54jK52DBd9Jwu9PD8Yyf25",
+        "url": "https://www.magicpatterns.com/os/54jK52DBd9Jwu9PD8Yyf25",
+        "title": "Enterprise AI Product Design Studio — Production OS v1.0",
+        "status": "ACTIVE_VERIFIED_BUILT"
+      }
     }
   },
   "archetypes": [

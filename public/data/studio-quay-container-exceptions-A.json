@@ -254,7 +254,7 @@
   "audit": {
     "caseId": "quay-container-exceptions",
     "title": "QuayReady — Inbound Container & Berth Exception Triage Engine",
-    "evaluatedAt": "2026-11-07T19:38:47.960Z",
+    "evaluatedAt": "2026-11-08T00:43:40.457Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,
@@ -410,12 +410,32 @@
       "editorId": "h7r6nj96m2lttknrvcayjy",
       "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
       "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
-      "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+      "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
       "publishedAt": "2026-11-07T19:33:14.117Z",
       "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
+      "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+      "aiGeneratedFiles": [
+        "types/port.ts",
+        "data/vessels.ts",
+        "data/customsHolds.ts",
+        "data/remediationActions.ts",
+        "data/cranes.ts",
+        "utils/time.ts",
+        "hooks/useNow.ts",
+        "utils/craneSolver.ts",
+        "hooks/useCraneSolver.ts",
+        "hooks/useBatchRemediation.ts",
+        "components/berthing/BerthingCountdownStrip.tsx",
+        "components/customs/BatchConfigureStep.tsx",
+        "components/customs/BatchProgressStep.tsx",
+        "components/customs/CustomsBatchRemediationModal.tsx",
+        "components/crane/CraneTimeline.tsx",
+        "components/crane/CraneConflictList.tsx",
+        "components/crane/CraneAuditLog.tsx",
+        "components/crane/CraneConflictSolver.tsx"
+      ]
     },
     "seedFiles": {
       "App.tsx": "import React from 'react';\nimport { QuayContainerExceptionDesk } from './QuayContainerExceptionDesk';\n\nexport function App() {\n  return <QuayContainerExceptionDesk />;\n}\n",
@@ -466,12 +486,32 @@
         "editorId": "h7r6nj96m2lttknrvcayjy",
         "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
         "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
-        "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+        "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
         "publishedAt": "2026-11-07T19:33:14.117Z",
         "promptRequestId": "c7364a02-8040-4e2c-9c19-3516bb461460",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history."
+        "aiPrompt": "Enhance this Port Logistics Exception Desk: add real-time vessel berthing countdown timers, a rapid batch-remediation modal for customs holds, and a dynamic crane allocation conflict solver with audit history.",
+        "aiGeneratedFiles": [
+          "types/port.ts",
+          "data/vessels.ts",
+          "data/customsHolds.ts",
+          "data/remediationActions.ts",
+          "data/cranes.ts",
+          "utils/time.ts",
+          "hooks/useNow.ts",
+          "utils/craneSolver.ts",
+          "hooks/useCraneSolver.ts",
+          "hooks/useBatchRemediation.ts",
+          "components/berthing/BerthingCountdownStrip.tsx",
+          "components/customs/BatchConfigureStep.tsx",
+          "components/customs/BatchProgressStep.tsx",
+          "components/customs/CustomsBatchRemediationModal.tsx",
+          "components/crane/CraneTimeline.tsx",
+          "components/crane/CraneConflictList.tsx",
+          "components/crane/CraneAuditLog.tsx",
+          "components/crane/CraneConflictSolver.tsx"
+        ]
       },
       "seedAndPrototypeFlow": [
         {
@@ -486,7 +526,7 @@
             "editorId": "h7r6nj96m2lttknrvcayjy",
             "editorUrl": "https://www.magicpatterns.com/c/h7r6nj96m2lttknrvcayjy",
             "previewUrl": "https://project-merry-tundra-288.magicpatterns.app",
-            "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41"
+            "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133"
           }
         },
         {
@@ -501,7 +541,7 @@
           "step": 3,
           "tool": "write_artifact_files",
           "arguments": {
-            "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+            "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
             "files": [
               "App.tsx",
               "index.tsx",
@@ -518,7 +558,7 @@
           "step": 4,
           "tool": "publish_artifact",
           "arguments": {
-            "artifactId": "edc2eae8-9006-47a8-ac3b-dd85b5ed0f41",
+            "artifactId": "2ead2da3-786c-4ed9-acfb-66c5555de133",
             "editorId": "h7r6nj96m2lttknrvcayjy",
             "description": "Initial enterprise seed: QuayReady — Inbound Container & Berth Exception Triage Engine with multi-factor attribution, telemetry audit, and approval gating"
           },

@@ -269,7 +269,7 @@
   "audit": {
     "caseId": "skillsbridge-review-console",
     "title": "SkillsBridge — Work-Evidence to HR Skill Attribution Console",
-    "evaluatedAt": "2026-11-07T19:38:47.946Z",
+    "evaluatedAt": "2026-11-08T00:43:40.449Z",
     "overallPassed": true,
     "passedDimensions": 7,
     "totalDimensions": 7,
@@ -425,12 +425,18 @@
       "editorId": "jhvkpwft3f3urpoatsfztf",
       "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
       "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
-      "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+      "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
       "publishedAt": "2026-11-07T19:33:01.248Z",
       "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
       "status": "ACTIVE_LIVE_PROTOTYPE",
       "account": "philgodf@gmail.com",
-      "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+      "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+      "aiGeneratedFiles": [
+        "utils/attributionDiff.ts",
+        "components/ConfidenceCalibration.tsx",
+        "components/AttributionDiffModal.tsx",
+        "components/WcagComplianceBadge.tsx"
+      ]
     },
     "seedFiles": {
       "App.tsx": "import React from 'react';\nimport { SkillsBridgeReviewConsole } from './SkillsBridgeReviewConsole';\n\nexport function App() {\n  return <SkillsBridgeReviewConsole />;\n}\n",
@@ -481,12 +487,18 @@
         "editorId": "jhvkpwft3f3urpoatsfztf",
         "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
         "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
-        "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+        "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
         "publishedAt": "2026-11-07T19:33:01.248Z",
         "promptRequestId": "fb363c18-2522-43c2-8da2-c1e3229a3e36",
         "status": "ACTIVE_LIVE_PROTOTYPE",
         "account": "philgodf@gmail.com",
-        "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge."
+        "aiPrompt": "Enhance this SkillsBridge Review Console: add an interactive calibration slider for AI confidence threshold, a split-view diff modal comparing manager assessment with AI suggested skill attributions, and a high-contrast WCAG 2.1 AA telemetry compliance badge.",
+        "aiGeneratedFiles": [
+          "utils/attributionDiff.ts",
+          "components/ConfidenceCalibration.tsx",
+          "components/AttributionDiffModal.tsx",
+          "components/WcagComplianceBadge.tsx"
+        ]
       },
       "seedAndPrototypeFlow": [
         {
@@ -501,7 +513,7 @@
             "editorId": "jhvkpwft3f3urpoatsfztf",
             "editorUrl": "https://www.magicpatterns.com/c/jhvkpwft3f3urpoatsfztf",
             "previewUrl": "https://project-upbeat-fox-347.magicpatterns.app",
-            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52"
+            "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32"
           }
         },
         {
@@ -516,7 +528,7 @@
           "step": 3,
           "tool": "write_artifact_files",
           "arguments": {
-            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+            "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
             "files": [
               "App.tsx",
               "index.tsx",
@@ -533,7 +545,7 @@
           "step": 4,
           "tool": "publish_artifact",
           "arguments": {
-            "artifactId": "3cbd73f4-e427-4d0f-a73e-a3cbb64d9f52",
+            "artifactId": "c4ab7cb6-561c-4d44-8c6d-0351de39ad32",
             "editorId": "jhvkpwft3f3urpoatsfztf",
             "description": "Initial enterprise seed: SkillsBridge — Work-Evidence to HR Skill Attribution Console with multi-factor attribution, telemetry audit, and approval gating"
           },

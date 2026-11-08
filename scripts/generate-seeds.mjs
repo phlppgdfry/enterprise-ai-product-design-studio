@@ -6,6 +6,7 @@ import {
   ENTERPRISE_CASES,
   INSPIRATION_ARCHETYPES,
   LIVE_MAGIC_PATTERNS_DESIGNS,
+  MAGIC_PATTERNS_TOP_USER_SUITE,
   buildProductBlueprint,
   generateMagicPatternsArtifacts,
   evaluateUxAndCompliance,
@@ -76,6 +77,7 @@ fs.writeFileSync(
         liveDesign: LIVE_MAGIC_PATTERNS_DESIGNS[c.id] || null,
       })),
       liveDesigns: LIVE_MAGIC_PATTERNS_DESIGNS,
+      topUserSuite: MAGIC_PATTERNS_TOP_USER_SUITE,
       archetypes: INSPIRATION_ARCHETYPES,
       designSystem: DESIGN_SYSTEM_TOKENS,
       setup: staticSetup,
@@ -84,6 +86,12 @@ fs.writeFileSync(
     null,
     2
   ) + '\n',
+  'utf8'
+);
+
+fs.writeFileSync(
+  path.join(publicDataDir, 'live-magic-patterns-designs.json'),
+  JSON.stringify(Object.values(LIVE_MAGIC_PATTERNS_DESIGNS), null, 2) + '\n',
   'utf8'
 );
 
